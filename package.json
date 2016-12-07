@@ -1,12 +1,12 @@
 {
   "name": "sjcdigital",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "CLI app to scrap and download open data from São José dos Campos",
-  "homepage": "sjcdigital.com",
+  "homepage": "http://sjcdigital.com",
   "author": {
     "name": "Paulo Luan",
     "email": "pauloluan.inova@gmail.com",
-    "url": "github.com/pauloluan"
+    "url": "github.com/sjcdigital"
   },
   "files": [
     "dist"
@@ -50,5 +50,9 @@
     "prepublish": "gulp prepublish",
     "test": "gulp"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bin": "lib/cli.js",
+  "dependencies": {
+    "meow": "^3.7.0"
+  }
 }
