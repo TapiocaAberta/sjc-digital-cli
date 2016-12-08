@@ -66,12 +66,11 @@
   "scripts": {
     "start": "node lib/cli bus",
     "debug": "./node_modules/.bin/node-debug lib/cli bus",
-    "build": "./node_modules/.bin/babel src --out-dir dist",
+    "build": "./node_modules/.bin/gulp",
     "coverage": "./node_modules/.bin/babel-node node_modules/.bin/babel-istanbul cover _mocha -- --timeout 30000 test/**/*.spec.js",
     "lint": "npm run lint-fix && npm run lint-check",
     "lint-check": "./node_modules/.bin/standard",
     "lint-fix": "./node_modules/.bin/standard --fix lib/**/*.js test/**/*.js",
-    "prepublish": "npm run build",
     "test": "./node_modules/.bin/mocha --compilers js:babel-core/register test/**/*.spec.js",
     "test-debug": "./node_modules/.bin/mocha --watch --compilers js:babel-core/register test/**/*.spec.js --inspect --debug-brk"
   }
