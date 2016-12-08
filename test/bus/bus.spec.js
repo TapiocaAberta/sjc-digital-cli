@@ -1,10 +1,10 @@
 let chai = require('chai')
-var expect = chai.expect;
+var expect = chai.expect
 
 let bus = require('../../lib/bus')
 
-describe('transformCSVArrayToObject', function() {
-  it('should transform the plain array with the first property as the key and the rest as value', function() {
+describe('transformCSVArrayToObject', function () {
+  it('should transform the plain array with the first property as the key and the rest as value', function () {
     var mockData = [
       ['linha', 1, 2],
       ['nome', 'putim', 'sao judas'],
@@ -22,6 +22,6 @@ describe('transformCSVArrayToObject', function() {
     }]
 
     var result = bus.transformCSVArrayToObject(mockData)
-    expect(result).to.deep.equal(expectedResult);
+    expect(result).to.deep.equal(expectedResult)
   })
 })
