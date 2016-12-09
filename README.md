@@ -1,4 +1,10 @@
-# sjcdigital [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# sjcdigital 
+[![NPM version][npm-image]][npm-url] 
+[![Build Status][travis-image]][travis-url] 
+[![Dependency Status][daviddm-image]][daviddm-url] 
+[![Coverage percentage][coveralls-image]][coveralls-url]
+[![Standard - JavaScript Style Guide][standard-image]][standard-url]
+
 > CLI app to scrap and download open data from São José dos Campos
 
 ## Installation
@@ -11,14 +17,13 @@ $ npm install -g sjcdigital
 
 Open your terminal and run: 
 ```sh
-sjcdigital --bus
+sjcdigital bus
 ```
 and it will download all the bus data and put it inside a folder called `onibus-data`
 
 ## License
 
 MIT © [Paulo Luan](github.com/pauloluan)
-
 
 [npm-image]: https://badge.fury.io/js/sjcdigital.svg
 [npm-url]: https://npmjs.org/package/sjcdigital
@@ -28,3 +33,5 @@ MIT © [Paulo Luan](github.com/pauloluan)
 [daviddm-url]: https://david-dm.org/sjcdigital/sjc-digital-cli
 [coveralls-image]: https://coveralls.io/repos/sjcdigital/sjc-digital-cli/badge.svg
 [coveralls-url]: https://coveralls.io/r/sjcdigital/sjc-digital-cli
+[standard-image]: https://cdn.rawgit.com/feross/standard/master/badge.svg
+[standard-url]: https://github.com/feross/standard
