@@ -1,6 +1,6 @@
 var path = require('path')
 var gulp = require('gulp')
-var eslint = require('gulp-eslint')
+var standard = require('gulp-standard')
 var excludeGitignore = require('gulp-exclude-gitignore')
 var mocha = require('gulp-mocha')
 var istanbul = require('gulp-istanbul')
@@ -18,9 +18,7 @@ require('babel-register')
 gulp.task('static', function () {
   return gulp.src('**/*.js')
     .pipe(excludeGitignore())
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError())
+    .pipe(standard())
 })
 
 gulp.task('nsp', function (cb) {
@@ -57,9 +55,9 @@ gulp.task('watch', function () {
 })
 
 gulp.task('coveralls', ['test'], function () {
-  // if (!process.env.CI) {
-  //   return
-  // }
+  if (!process.env.CI) {
+    return
+  }
 
   return gulp.src(path.join(__dirname, 'coverage/lcov.info'))
     .pipe(coveralls())
