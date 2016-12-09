@@ -1,9 +1,9 @@
-# sjcdigital 
+# sjcdigital [![Standard - JavaScript Style Guide][standard-image]][standard-url]
+
 [![NPM version][npm-image]][npm-url] 
 [![Build Status][travis-image]][travis-url] 
 [![Dependency Status][daviddm-image]][daviddm-url] 
 [![Coverage percentage][coveralls-image]][coveralls-url]
-[![Standard - JavaScript Style Guide][standard-image]][standard-url]
 
 > CLI app to scrap and download open data from São José dos Campos
 
