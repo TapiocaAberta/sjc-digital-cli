@@ -3,8 +3,8 @@ var expect = chai.expect
 
 let bus = require('../../lib/bus')
 
-describe('transformCSVArrayToObject', function () {
-  it('should transform the plain array with the first property as the key and the rest as value', function () {
+describe('transformCSVArrayToObject', function() {
+  it('should transform the plain array with the first property as the key and the rest as value', function() {
     var mockData = [
       ['linha', 1, 2],
       ['nome', 'putim', 'sao judas'],
@@ -14,17 +14,17 @@ describe('transformCSVArrayToObject', function () {
     ]
 
     var expectedResult = [{
-      line: 1,
-      name: 'putim',
-      direction: 'centro',
-      busSchedule: "/secretarias/transportes/horario-e-itinerario.aspx?acao=d&id_linha=1",
-      route: "/secretarias/transportes/horario-e-itinerario.aspx?acao=m&id_linha=1"
+      "busSchedule": "http://www.sjc.sp.gov.br/secretarias/transportes/horario-e-itinerario.aspx?acao=d&id_linha=1",
+      "direction": "centro",
+      "line": 1,
+      "name": "putim",
+      "route": "http://www.sjc.sp.gov.br/secretarias/transportes/horario-e-itinerario.aspx?acao=m&id_linha=1"
     }, {
-      line: 2,
-      name: 'sao judas',
-      direction: 'bairro',
-      busSchedule: "/secretarias/transportes/horario-e-itinerario.aspx?acao=d&id_linha=2",
-      route: "/secretarias/transportes/horario-e-itinerario.aspx?acao=m&id_linha=2"
+      "busSchedule": "http://www.sjc.sp.gov.br/secretarias/transportes/horario-e-itinerario.aspx?acao=d&id_linha=2",
+      "direction": "bairro",
+      "line": 2,
+      "name": "sao judas",
+      "route": "http://www.sjc.sp.gov.br/secretarias/transportes/horario-e-itinerario.aspx?acao=m&id_linha=2"
     }]
 
     var result = bus.transformCSVArrayToObject(mockData)
