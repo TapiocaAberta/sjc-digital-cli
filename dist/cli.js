@@ -1,10 +1,16 @@
-#!/usr/bin/env node
+'use strict';
 
-'use strict'
+var meow = require('meow');
+var bus = require('./bus');
 
-var meow = require('meow')
-var sjcdigital = require('./bus')
+var message = ['Usage', '  $ sjcdigital [input]', '', 'Options', '  sjcdigital bus [downloads the bus data and creates a folder called bus with the result inside]', ''];
 
-var cli = meow(['Usage', '  $ sjcdigital [input]', '', 'Options', '  sjcdigital bus [downloads the bus data and creates a folder called bus with the result inside]', ''])
+var cli = meow(message);
 
-sjcdigital(cli.input[0], cli.flags)
+switch (cli.input[0]) {
+  case 'bus':
+    bus.init();
+    break;
+  default:
+    cli.showHelp();
+}
