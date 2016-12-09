@@ -64,8 +64,8 @@
   "main": "dist/index.js",
   "repository": "PauloLuan/sjcdigital",
   "scripts": {
-    "start": "node lib/cli bus",
-    "debug": "./node_modules/.bin/node-debug lib/cli bus",
+    "start": "node lib/cli.js bus",
+    "debug": "./node_modules/.bin/node-debug lib/cli.js bus",
     "build": "./node_modules/.bin/gulp",
     "coverage": "./node_modules/.bin/babel-node node_modules/.bin/babel-istanbul cover _mocha -- --timeout 30000 test/**/*.spec.js",
     "lint": "npm run lint-fix && npm run lint-check",
