@@ -11,6 +11,7 @@
   "dependencies": {
     "cheerio": "^0.22.0",
     "cheerio-tableparser": "^1.0.1",
+    "co": "^4.6.0",
     "lodash": "^4.17.2",
     "meow": "^3.7.0",
     "request": "^2.79.0",
@@ -21,9 +22,11 @@
     "babel-core": "^6.11.4",
     "babel-eslint": "^6.1.2",
     "babel-istanbul": "^0.11.0",
+    "babel-polyfill": "^6.20.0",
     "babel-preset-es2015": "6.9.0",
     "babel-register": "^6.9.0",
     "chai": "^3.5.0",
+    "co-mocha": "^1.1.3",
     "del": "^2.0.2",
     "eslint": "^3.1.1",
     "eslint-config-xo-space": "^0.15.0",
@@ -65,14 +68,14 @@
   "main": "dist/index.js",
   "repository": "PauloLuan/sjcdigital",
   "scripts": {
-    "start": "node lib/cli.js bus",
-    "debug": "./node_modules/.bin/node-debug lib/cli.js bus",
     "build": "./node_modules/.bin/gulp",
+    "debug": "./node_modules/.bin/node-debug lib/cli.js bus",
     "lint": "npm run lint-fix && npm run lint-check",
     "lint-check": "./node_modules/.bin/standard",
     "lint-fix": "./node_modules/.bin/standard --fix lib/**/*.js test/**/*.js",
-    "test": "gulp",
-    "mocha": "./node_modules/.bin/mocha --compilers js:babel-core/register test/**/*.spec.js",
-    "mocha-debug": "./node_modules/.bin/mocha --watch --compilers js:babel-core/register test/**/*.spec.js --inspect --debug-brk"
+    "mocha": "./node_modules/.bin/mocha test/**/*.spec.js",
+    "mocha-debug": "./node_modules/.bin/mocha --watch test/**/*.spec.js --inspect --debug-brk",
+    "start": "node lib/cli.js bus",
+    "test": "gulp"
   }
 }

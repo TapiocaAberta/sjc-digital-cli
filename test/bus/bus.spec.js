@@ -1,6 +1,8 @@
-const chai = require('chai')
-const expect = chai.expect
-const busModule = require('../../lib/bus')
+// const chai = require('chai')
+// const expect = chai.expect
+const  busModule = require('../../lib/bus')
+const assert = require('assert')
+const coMocha = require('co-mocha')
 
 let rawList = [
   ['linha', 1, 2],
@@ -38,7 +40,7 @@ describe('transformCSVArrayToObject', function() {
 
   it('should transform the plain array with the first property as the key and the rest as value', function() {
     let result = busModule.transformCSVArrayToObject(rawList)
-    expect(result).to.deep.equal(parsedList)
+    assert.deepEqual(result, parsedList)
   })
 
   it('parseBuses - should parse and return', function*() {
@@ -48,6 +50,6 @@ describe('transformCSVArrayToObject', function() {
       'teste': 2
     }]
     let result = yield busModule.parseBuses(teste)
-    expect(result).to.deep.equal(teste)
+    assert.deepEqual(result, teste)
   })
 })
