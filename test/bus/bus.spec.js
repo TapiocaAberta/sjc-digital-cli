@@ -39,9 +39,8 @@ let parsedDetails = [{
 
 }]
 
-describe('transformCSVArrayToObject', function() {
-
-  it('should transform the plain array with the first property as the key and the rest as value', function() {
+describe('transformCSVArrayToObject', function () {
+  it('should transform the plain array with the first property as the key and the rest as value', function () {
     let result = busModule.transformCSVArrayToObject(rawList)
     assert.deepEqual(result, parsedList)
   })
@@ -53,7 +52,7 @@ describe('transformCSVArrayToObject', function() {
       'teste': 2
     }]
     let result = yield busModule.parseBuses(teste)
-      //assert.deepEqual(result, teste)
+      // assert.deepEqual(result, teste)
   })
 
   it.only('getScheduleTimes - should parse the page and return the schedule of buses', function*() {
