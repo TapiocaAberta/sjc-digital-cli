@@ -1,0 +1,932 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR" lang="pt-BR" >
+  <head><title>
+  Hor&#225;rios e Itiner&#225;rios de &#212;nibus
+        - Prefeitura Municipal de São José dos Campos
+      
+</title>
+    
+    <!-- meta information for search engines -->
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Cache-Control" content="no-cache" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="0" /><meta name="keywords" content="Prefeitura, Cidade, Serviços, Online, São José dos Campos" /><meta name="description" content="Prefeitura Municipal de São José dos Campos" /><meta name="google-site-verification" content="u9UUO_-__SDfq4Zq3h-qqtznB6_RYlPxEEzPIo4ZsVw" /><meta name="author" content="Prefeitura Municipal de São José dos Campos" /><meta name="language" content="pt-br" /><meta name="classification" content="E-GOV" /><meta name="GlobalSignValidation" content="Olá Globalsign 0hhj7K" />
+  
+    <!-- CSS e Icones -->
+    <link href="/pmsjc_imagens/favicon.ico?v=5" rel="shortcut icon" />
+    <style type="text/css" media="all">
+      @import "/css/estrutura.css?v=3";
+      @import "/css/cabecalho.css?v=3";
+      @import "/css/rodape.css?v=3";
+      @import "/css/style.css?v=3";
+      @import "/css/home.css?v=3";
+      @import "/css/noticias.css?v=3";
+      @import "/css/secretarias.css?v=3";
+      @import "/css/formularios.css?v=3";
+      @import "/css/saladeimprensa.css?v=3";
+      @import "/css/padronizacao.css?v=3";
+      @import "/css/barra.css?v=4";
+      @import "/css/expediente_calendario.css?v=3";
+      @import "/css/hotsites.css?v=4";
+      @import "/css/periodo_eleitoral.css?v=3";
+      @import "/css/novo_layout_home.css?v=9";
+    </style>
+    
+    <!-- Estilo para nao imprimir a barra de identidade -->
+    <style type="text/css" media="print">
+      #div_pmsjc_barra_identidade { display: none; }
+    </style>
+    
+    <!-- Verifica se a pagina precisa ou nao rodar sobre https -->
+    
+    <script src="/scripts/combo_sec_fund.js" type="text/javascript"></script>
+    <script src="/scripts/tamanhofonte.js" type="text/javascript"></script>
+    <script src="/scripts/FuncoesDiversas.js" type="text/javascript"></script>
+    <script src="/scripts/redes_sociais.js" type="text/javascript"></script>
+    <script src="/scripts/swfobject_modified.js" type="text/javascript"></script>
+    <script src="/scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/scripts/jquery.cycle.all.js" ></script> 
+    <script src="/scripts/esconde_div.js" type="text/javascript"></script>
+    
+    <!-- GOOGLE ANALYTICS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-16979928-1', 'auto');
+      ga('require', 'displayfeatures');
+      ga('require', 'linkid', 'linkid.js');
+      ga('send', 'pageview');
+    </script>
+    <!-- GOOGLE ANALYTICS -->  
+    
+    <!-- Hack: Script para tirar as bordas de todos os inputs tipo radio e checkbox -->
+    <script type="text/javascript">
+      function tiraBordaCheckRadio() {
+        $('input[type="checkbox"]').toggleClass('sem_borda', true);
+        $('input[type="radio"]').toggleClass('sem_borda', true);
+      }
+      $(document).ready(function() {
+        tiraBordaCheckRadio();
+      });
+    </script>
+    <!-- Hack: Script para tirar as bordas de todos os inputs tipo radio e checkbox -->
+    
+<!-- HAND TALK -->
+<script type="text/javascript">
+  var _hta = {'_setToken': 'fd6df1ede1667bbaf4ccacad76ca2e848663e891','_htException': 'HandTalk_EXCECAO'};
+  (function() {
+    var ht = document.createElement('script'); ht.type = 'text/javascript'; ht.async = true;
+    //ht.src = 'http://api.handtalk.me/handtalk_init.js';
+    ht.src = '//api.handtalk.me/handtalk_init.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.appendChild(ht);
+  })();
+  //  HandTalk_EXCECAO -> ID ou CLASSE do elemento que desejar exceção, separados por virgula
+  //  Exemplo:  '#menu,.listas,.formulario,#carrousel'
+</script>
+<!-- HAND TALK --> 
+    
+    
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" />
+<style type="text/css" media="print">
+    #divListaOnibus {display: none;}
+    #divListaAlternativo {display: none;}
+    #divPesquisaItinerario {display: none;}
+    .box_home_pmsjc_cabecalho {display: none; }
+    .box_home_pmsjc_rodape {display: none;} 
+</style>
+<style type="text/css" media="screen">
+    #divListaOnibusImpressao {display: none;}
+    #divListaAlternativoImpressao {display: none;}
+</style>  
+  <style type="text/css" media="print">
+    #tudo {width: 100%;}
+    #topo {display: none;}
+    #rodape {display: none;}
+    #coluna1 {display: none;}
+    #coluna2 {width: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;}
+    #homecoluna1 {display: none;}
+    #homecoluna2 {display: none;}
+    #ferramentas_a2 {display: none;}
+    #ferramenta_acessibilidade_content {display: none;}
+    #corpo_final_ferramentas {display: none;}
+    #corpo_coluna1_imprimir {display: none;}
+    #conteudo_sec {width: 100%;}
+    .nao_imprime {display: none;}
+  </style>
+  <script src="/scripts/f_formatadado.js" type="text/javascript"></script>
+
+</head>
+  
+  <body>  
+    <noscript>Seu navegador não suporta javascript!</noscript>
+    <form method="post" action="/secretarias/transportes/horario-e-itinerario.aspx?acao=d&amp;id_linha=96" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUENTM4MQ9kFgJmD2QWAmYPZBYCZg9kFgJmD2QWAmYPZBYCAgMQZGQWBAIFD2QWAmYPZBYCZg9kFgICAQ9kFgJmD2QWAmYPD2QWCh4Hb25rZXl1cAUeYWNoZUZhY2lsQ2FtcG9CdXNjYVNvYmVUZWNsYSgpHglvbmtleWRvd24FOGphdmFzY3JpcHQ6IHJldHVybiBhY2hlRmFjaWxDYW1wb0J1c2NhRGVzY2VUZWNsYShldmVudCk7HgdvbmZvY3VzBR5hY2hlRmFjaWxDYW1wb0J1c2NhR2FuaGFGb2NvKCkeBm9uYmx1cgUeYWNoZUZhY2lsQ2FtcG9CdXNjYVBlcmRlRm9jbygpHgpvbmtleXByZXNzBThqYXZhc2NyaXB0OnJldHVybiBhY2hlRmFjaWxDYW1wb0J1c2NhQXBlcnRhVGVjbGEoZXZlbnQpO2QCBw9kFgICAw9kFgICBQ9kFgICAQ9kFgJmD2QWBAIBDw8WAh4HVmlzaWJsZWhkFgQCBg9kFgQCAQ88KwALAQEUKwAGZGRkZDwrAAQBABYCHhtEYXRhTmF2aWdhdGVVcmxGb3JtYXRTdHJpbmcFRi9zZWNyZXRhcmlhcy90cmFuc3BvcnRlcy9ob3JhcmlvLWUtaXRpbmVyYXJpby5hc3B4P2FjYW89ZCZpZF9saW5oYT17MH08KwAEAQAWAh8GBUYvc2VjcmV0YXJpYXMvdHJhbnNwb3J0ZXMvaG9yYXJpby1lLWl0aW5lcmFyaW8uYXNweD9hY2FvPW0maWRfbGluaGE9ezB9ZAIDDzwrAAsAZAIHD2QWBAIBDzwrAAsBARQrAAZkZGRkPCsABAEAFgIfBgVGL3NlY3JldGFyaWFzL3RyYW5zcG9ydGVzL2hvcmFyaW8tZS1pdGluZXJhcmlvLmFzcHg/YWNhbz1kJmlkX2xpbmhhPXswfTwrAAQBABYCHwYFRi9zZWNyZXRhcmlhcy90cmFuc3BvcnRlcy9ob3JhcmlvLWUtaXRpbmVyYXJpby5hc3B4P2FjYW89bSZpZF9saW5oYT17MH1kAgMPPCsACwBkAgMPDxYCHwVnZBYOAgEPDxYCHgRUZXh0BQMyMTJkZAIDDw8WAh8HBVNQVVRJTSAvIFRFUk1JTkFMIENFTlRSQUwg4oCTIFZJQSBBVi4gRE9TIEFTVFJPTkFVVEFTIChDSVJDVUxBUiBOTyBDRU5UUk8pIE8uUy5PLiA2MGRkAgUPDxYCHwcFGFBVVElNIC8gVEVSTUlOQUwgQ0VOVFJBTGRkAgcPDxYCHwcFjQVSVUEgQ0FSTE9TIEEuIERFIFAuIFRPUk8g4oCTIFJVQSBNRVNTSUFTIERFIEFMVkFSRU5HQSDigJMgQVYuIEpPQU8gUk9ET0xGTyBDQVNURUxMSSDigJMgQVYuIEpPU0UgSUdOQUNJTyBCSUNVRE8g4oCTIFJVQSBKT1NFIEdPTkNBTFZFUyBDQU1QT1Mg4oCTIEFWLiBKT1NFIElHTkFDSU8gQklDVURPIOKAkyBBVi4gSk9BTyBST0RPTEZPIENBU1RFTExJIOKAkyBSVUEgSVRBVElBSUEg4oCTIFJVQSBUVVJVTUlSSU0g4oCTIFJVQSBORVBPTVVDRU5PIOKAkyBBVi4gSk9BTyBST0RPTEZPIENBU1RFTExJIOKAkyBFU1RSLiBNVU5JQy4gR0xBVURJU1RPTiBQLiBERSBPTElWRUlSQSDigJMgQVYuIERPTUlOR09TIE1BTERPTkFETyBDQU1QT1kg4oCTIEFWLiBCUklHLiBGQVJJQSBMSU1BIOKAkyBBVi4gRE9TIEFTVFJPTkFVVEFTIOKAkyBWRC4gRE9TIEJBTkRFSVJBTlRFUyDigJMgUlVBIEJBSElBIOKAkyBSVUEgVFVQQSDigJMgUENBIENBUC4gUEVEUk8gUElOVE8gREEgQ1VOSEEg4oCTIEFWLiBQRURSTyBBLiBDQUJSQUwg4oCTIFZELiBSQVFVRUwgTUFSQ09OREVTIOKAkyBSVUEgQ0VMLiBNT1JBRVMg4oCTIFJVQSBGUkFOQ0lTQ08gUkFGQUVMIOKAkyBSVUEgU0lRVUVJUkEgQ0FNUE9TIOKAkyBQQ0EgUEFEUkUgSk9BTyDigJMgVEVSTUlOQUwgQ0VOVFJBTGRkAgkPDxYCHwcFP0FPUyBTQUJBRE9TIEUgRE9NSU5HT1MgVE9EQVMgQVMgVklBR0VOUyBFTlRSQU0gTk8gVklMQSBBRFJJQU5BLmRkAgsPDxYCHwcFGUF0dWFsaXphZG8gZW06IDA2LzEyLzIwMTRkZAINDw8WAh8HBehMPHRhYmxlIHdpZHRoID0gJzMzJScgYm9yZGVyPScwJyBjZWxscGFkZGluZyA9ICcyJyBjZWxsc3BhY2luZyA9ICcyJyBib3JkZXJjb2xvcj0nRkZGRkZGJz4gPHRyPjx0ZCBhbGlnbj0nY2VudGVyJz48dGFibGUgd2lkdGggPSAnMTAwJScgYm9yZGVyPScwJyBjZWxscGFkZGluZyA9ICcwJyBjZWxsc3BhY2luZyA9ICcwJyBzdHlsZT0nYm9yZGVyLWNvbGxhcHNlOmNvbGxhcHNlOyBib3JkZXI6IG5vbmU7Jz48dHI+PHRkIGNvbHNwYW4gPSAnNCcgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz48Yj5EZSBzZWd1bmRhLWZlaXJhIGEgc2V4dGEtZmVpcmE8L2I+PC90ZD4gPC90cj48dHI+PHRkIGNvbHNwYW4gPSAnNCcgc3R5bGU9J2JvcmRlcjogbm9uZSc+PGRpdiBzdHlsZT0nZm9udC1zaXplOjRweCc+Jm5ic3A7PC9kaXY+PC90ZD48L3RyPjx0cj48dGQgYWxpZ249J2NlbnRlcicgd2lkdGggPSAnMjUlJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjxiPjAgw6BzIDZoPC9iPjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHdpZHRoID0gJzI1JScgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz48Yj42IMOgcyAxMmg8L2I+PC90ZD48dGQgYWxpZ249J2NlbnRlcicgd2lkdGggPSAnMjUlJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjxiPjEyIMOgcyAxOGg8L2I+PC90ZD48dGQgYWxpZ249J2NlbnRlcicgd2lkdGggPSAnMjUlJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjxiPjE4IMOgcyAyNGg8L2I+PC90ZD48L3RyPjx0cj48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4wNToxMDwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MDY6MTI8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjEyOjI1KDEpPC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xODozMigxKTwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MDU6NDQ8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjA2OjQwPC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xMjo1NSgxKTwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTk6MDYoMSk8L3RkPjwvdHI+PHRyPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MDc6MDg8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjEzOjI1KDEpPC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xOTo0NSgxKTwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4wNzozNjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTQ6MDAoMSk8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjIwOjMyKDEpPC90ZD48L3RyPjx0cj48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz48L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjA4OjA0PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xNDozNCgxKTwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MjE6MDYoMSk8L3RkPjwvdHI+PHRyPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MDg6MzI8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjE1OjA4KDEpPC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4yMTo0MCgxKTwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4wOTowMDwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTU6NDIoMSk8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjIyOjEyKDEpPC90ZD48L3RyPjx0cj48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz48L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjA5OjUwKDEpPC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xNjoxNigxKTwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MjM6MDYoMSk8L3RkPjwvdHI+PHRyPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTA6MjUoMSk8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjE2OjUwKDEpPC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4yMzo0NSgxKTwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xMDo1NSgxKTwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTc6MjQoMSk8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xMToyNSgxKTwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTc6NDAoMSk8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xMTo1NSgxKTwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTc6NTgoMSk8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjwvdGQ+PC90cj48L3RhYmxlPjwvdGQ+PC90cj48L3RhYmxlPjx0YWJsZSB3aWR0aCA9ICczMyUnIGJvcmRlcj0nMCcgY2VsbHBhZGRpbmcgPSAnMicgY2VsbHNwYWNpbmcgPSAnMicgYm9yZGVyY29sb3I9J0ZGRkZGRic+IDx0cj48dGQgYWxpZ249J2NlbnRlcic+PHRhYmxlIHdpZHRoID0gJzEwMCUnIGJvcmRlcj0nMCcgY2VsbHBhZGRpbmcgPSAnMCcgY2VsbHNwYWNpbmcgPSAnMCcgc3R5bGU9J2JvcmRlci1jb2xsYXBzZTpjb2xsYXBzZTsgYm9yZGVyOiBub25lOyc+PHRyPjx0ZCBjb2xzcGFuID0gJzQnIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PGI+QW9zIHMmIzIyNTtiYWRvczwvYj48L3RkPiA8L3RyPjx0cj48dGQgY29sc3BhbiA9ICc0JyBzdHlsZT0nYm9yZGVyOiBub25lJz48ZGl2IHN0eWxlPSdmb250LXNpemU6NHB4Jz4mbmJzcDs8L2Rpdj48L3RkPjwvdHI+PHRyPjx0ZCBhbGlnbj0nY2VudGVyJyB3aWR0aCA9ICcyNSUnIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PGI+MCDDoHMgNmg8L2I+PC90ZD48dGQgYWxpZ249J2NlbnRlcicgd2lkdGggPSAnMjUlJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjxiPjYgw6BzIDEyaDwvYj48L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyB3aWR0aCA9ICcyNSUnIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PGI+MTIgw6BzIDE4aDwvYj48L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyB3aWR0aCA9ICcyNSUnIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PGI+MTggw6BzIDI0aDwvYj48L3RkPjwvdHI+PHRyPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjAwOjUwPC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4wNjoxMjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTI6MDY8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjE4OjUyPC90ZD48L3RyPjx0cj48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4wNTowMDwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MDY6NDg8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjEyOjM4PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xOTozNDwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MDU6MzY8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjA3OjIyPC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xMzoxMDwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MjA6MjA8L3RkPjwvdHI+PHRyPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MDc6NTQ8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjEzOjQyPC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4yMTowNTwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4wODoyNjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTM6NDIoMik8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjIxOjU1PC90ZD48L3RyPjx0cj48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz48L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjA5OjI2PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xNDo0NjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MjI6NTA8L3RkPjwvdHI+PHRyPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MDk6NTg8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjE1OjMyPC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4yMzo0MDwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xMDozMDwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTY6MDA8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xMTowMjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTY6MzI8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xMTozNDwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTc6MDQoMik8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz48L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjE3OjUyPC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz48L3RkPjwvdHI+PC90YWJsZT48L3RkPjwvdHI+PC90YWJsZT48dGFibGUgd2lkdGggPSAnMzMlJyBib3JkZXI9JzAnIGNlbGxwYWRkaW5nID0gJzInIGNlbGxzcGFjaW5nID0gJzInIGJvcmRlcmNvbG9yPSdGRkZGRkYnPiA8dHI+PHRkIGFsaWduPSdjZW50ZXInPjx0YWJsZSB3aWR0aCA9ICcxMDAlJyBib3JkZXI9JzAnIGNlbGxwYWRkaW5nID0gJzAnIGNlbGxzcGFjaW5nID0gJzAnIHN0eWxlPSdib3JkZXItY29sbGFwc2U6Y29sbGFwc2U7IGJvcmRlcjogbm9uZTsnPjx0cj48dGQgY29sc3BhbiA9ICc0JyBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjxiPkFvcyBkb21pbmdvcyBlIGZlcmlhZG9zPC9iPjwvdGQ+IDwvdHI+PHRyPjx0ZCBjb2xzcGFuID0gJzQnIHN0eWxlPSdib3JkZXI6IG5vbmUnPjxkaXYgc3R5bGU9J2ZvbnQtc2l6ZTo0cHgnPiZuYnNwOzwvZGl2PjwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHdpZHRoID0gJzI1JScgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz48Yj4wIMOgcyA2aDwvYj48L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyB3aWR0aCA9ICcyNSUnIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PGI+NiDDoHMgMTJoPC9iPjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHdpZHRoID0gJzI1JScgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz48Yj4xMiDDoHMgMThoPC9iPjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHdpZHRoID0gJzI1JScgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz48Yj4xOCDDoHMgMjRoPC9iPjwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MDA6NDU8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjA2OjQ4PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xMjo1MTwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTg6MTU8L3RkPjwvdHI+PHRyPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjA1OjAwPC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4wNzo0MjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTM6NDUoMik8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjE5OjMyPC90ZD48L3RyPjx0cj48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4wNTo1NDwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MDg6MzY8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjE0OjM5PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4yMDoyNjwvdGQ+PC90cj48dHI+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+PC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4wOTo1NjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTU6MzM8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjIxOjIwPC90ZD48L3RyPjx0cj48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz48L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjEwOjUwPC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4xNjoyNygyKTwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MjI6MzA8L3RkPjwvdHI+PHRyPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjwvdGQ+PHRkIGFsaWduPSdjZW50ZXInIHN0eWxlPSdib3JkZXI6IDFweCBzb2xpZCBibGFjayc+MTE6NTc8L3RkPjx0ZCBhbGlnbj0nY2VudGVyJyBzdHlsZT0nYm9yZGVyOiAxcHggc29saWQgYmxhY2snPjE3OjIxPC90ZD48dGQgYWxpZ249J2NlbnRlcicgc3R5bGU9J2JvcmRlcjogMXB4IHNvbGlkIGJsYWNrJz4yMzozNTwvdGQ+PC90cj48L3RhYmxlPjwvdGQ+PC90cj48L3RhYmxlPjxicj48ZGl2IHN0eWxlPSd3aWR0aDogMTAwJTsgY2xlYXI6IGJvdGg7Jz48cCBjbGFzcz0ndGV4dG9zbSc+KDEpIEFURU5ERSBBTyBWSUxBIEFEUklBTkEgPGJyPigyKSBDRFA8YnI+PC9wPjwvZGl2PmRkZLVZvVWYGQ7kpYHCdIz9rC87mjhv" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=TmW2E9fwdDZ4Cw2Zk2kdxKAmWKGQ_2gMCoIgVkxMHD-aQCv1m7TystSTfGXBouMtaf5Q3VrWEvBJdDMtIMwbPr86z7A1&amp;t=635589363467565191" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+tiraBordaCheckRadio();//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=5h7prIHzdqgNn-Yf97y4rQNzet_AWrTZPGejdQ5bJgq3zipIbbj1A9-unYkuDwOADsmpJ-L4GVFor8cC3EIo9S3lf7bS8OrCtMsGEVERkZqnfLPBmQA-0wDY8omcegQNMkrjfnKmBRfTPm8NRq58P8xGT3M1&amp;t=ffffffffbcb9b94a" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=tPei5rgUEXwgAe8bzrRNyE9Fo7LbhHbFrQ_xhvkE5iS9M_YC1WEpj7mDYSTyT4RXIKCZCUSH39H8tuFBcqjvwRXM72qq1cNusuY7ggAs8wdt7nRGBwDgx2MXMqv6x63hkITqI10eZiOESf0BSovF-LBMkll3VWQrVGQlcRdPUmgd-yWu0&amp;t=ffffffffbcb9b94a" type="text/javascript"></script>
+    <!--[if lt IE 8]><p>Atualize a versão do seu navegador Internet Explorer para ver corretamente este site. Para isso, <a href='http://windows.microsoft.com/pt-BR/internet-explorer/downloads/ie' target='_blank'>clique aqui</a>.</p><![endif]-->
+    
+    <!-- SCRIPT MANAGER -->
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$ctl00$ctl00$ContentPlaceHolderDefault$AjaxScriptManager_4$ScriptManager1', document.getElementById('aspnetForm'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tctl00$ctl00$ctl00$ctl00$ContentPlaceHolderDefault$AcheFacil_5$upBarraAcheFacil'], [], ['ctl00$ctl00$ctl00$ctl00$ContentPlaceHolderDefault$AcheFacil_5$btnBuscar'], 90);
+//]]>
+</script>
+
+
+<!-- HOME -->
+    <div id="box_home_pmsjc_tudo">
+                
+                <!-- BARRA DE IDENTIDADE -->
+                <div id="div_pmsjc_barra_identidade" class="barra_ident_pmsjc_geral">
+                  <div class="barra_ident_pmsjc_conteudo">
+                    <div class="barra_ident_pmsjc_textos">
+                      <div class="barra_ident_pmsjc_titulo">
+                        Portal Oficial -
+                      </div>
+                      <div class="barra_ident_pmsjc_prefeitura">
+                        Prefeitura Municipal de São José dos Campos
+                      </div>
+                      <div class="barra_ident_pmsjc_prefeitura_logo">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- BARRA DE IDENTIDADE -->
+                
+                <!-- CABECALHO -->
+                <div class="box_home_pmsjc_cabecalho">
+                    <div class="box_home_pmsjc_cabecalho_centro">
+                        
+                            <!-- LOGO -->
+                            <div class="box_home_pmsjc_cabecalho_imagem_logo" style="width:390px !important;">
+                                <a href="/" title="Prefeitura Municipal de São José dos Campos">
+                                 <!-- ALTERAR IMG NO modelo_servico_frame_cabecalho -->
+                                 <!-- <img src="https://www.sjc.sp.gov.br/media/621135/logo_natal.png" width="300" height="150" alt="Logo da Prefeitura Municipal de São José dos Campos" />-->
+                                 <!-- <img src="/pmsjc_imagens/cabecalho/logo.png" width="300" height="150" alt="Logo da Prefeitura Municipal de São José dos Campos" />-->
+                                 <!-- <img src="/media/452552/logo_horizontal_texto_branco.png" width="300" height="150" alt="Logo da Prefeitura Municipal de São José dos Campos" />-->
+                                      <img src="http://www.sjc.sp.gov.br/media/677266/logo.png" width="390" height="150" alt="Logo da Prefeitura Municipal de São José dos Campos" />
+                                </a>
+                            </div>
+                            <!-- LOGO -->
+                      
+                            <!-- CDM -->
+                               <!--<div class="espaco_lado_logo_site">-->
+                                 <!-- <img src="https://www.sjc.sp.gov.br/media/645551/icone-festivo-mulher.png" alt="Mês da Mulher" /> -->
+                                 <!-- <a href="http://www.sjc.sp.gov.br/secretarias/fazenda/facilita_sao_jose_2015.aspx"> -->
+                                   <!-- <img src="https://www.sjc.sp.gov.br/media/556520/248anos_sjc.jpg" /> -->
+                                   <!-- <img src="/media/479543/laco.jpg" /> -->
+                                   <!-- <img src="https://www.sjc.sp.gov.br/media/611374/azul.png" />-->
+                                   <!-- <img src="https://www.sjc.sp.gov.br/media/621002/chapeu_papai_noel.jpg" /> -->
+                                 <!--</a>-->
+                              <!--</div>-->
+                            <!-- CDM -->
+                            
+                            <!-- BLOCO DA DIREITA -->
+                            <div class="box_home_pmsjc_cabecalho_painel_da_direita">
+            
+            
+                                <!-- MENU SUPERIOR -->
+                                <div class="box_home_pmsjc_cabecalho_acessibilidade">
+                                    <div id="rod_bloco_top_acess">
+                                        <ul>
+                                            <li>
+                                                <a href="/pmsjc_paginas/rss.aspx" target="_top" title="RSS">RSS</a>
+                                            </li>
+                                            <li>
+                                                <a href="/mapa-do-site.aspx" target="_top" title="Mapa do site">Mapa do site</a>
+                                            </li>
+                                            <li>
+                                                <a href="/espanol.aspx" target="_top" title="Español">Español</a>
+                                            </li>
+                                            <li>
+                                                <a href="/english.aspx" target="_top" title="English">English</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://www.sjc.sp.gov.br/" target="_top" title="Português">Português</a>
+                                            </li>
+                                            <li>
+                                                <a href="/prefeitura/acessibilidade_site.aspx" target="_top" title="Acessibilidade no site [2]">Acessibilidade no site [2]</a>
+                                            </li>
+                                            <li>
+                                                <a href="#conteudo_principal" target="_top" title="Pular para conteúdo [1]">Pular para conteúdo [1]</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- MENU SUPERIOR -->
+                                
+                                
+                                <!-- PESQUISA -->
+                                
+
+<script type="text/javascript">
+  <!--
+    var sAcheFacilTextoInicial = "ACHE FÁCIL O QUE VOCÊ PROCURA";
+    var acheFacilTeclaTimeOut;
+    var acheFacilEscondeSugTimeOut;
+
+    // HTML Encode
+    function acheFacilHtmlEncode(value) {
+        var sRetorno;
+        sRetorno = String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+        //sRetorno = $('<div/>').text(value).html();
+        sRetorno = sRetorno.replace(/Serviço On-line/g, "<b>Serviço <span lang=\"en-us\">On-line<\/span><\/b>");
+        return sRetorno;
+    }
+
+    // Esconde a lista de sugestoes
+    function acheFacilEscondeSugestoes() {
+        clearInterval(acheFacilEscondeSugTimeOut);
+        document.getElementById("ache_facil_lista_sugestoes").style.visibility = "hidden";
+    }
+    
+    
+    // Verifica se a opcao de pesquisa esta selecionada
+    function acheFacilOpcaoSelecionada(pIdComponente) {
+        if (document.getElementById(pIdComponente)) {
+            if (document.getElementById(pIdComponente).checked) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+
+    // Realiza a busca de sugestoes
+    function acheFacilBuscaSugestoesA() {
+        clearInterval(acheFacilTeclaTimeOut);
+        var sTexto = document.getElementById("ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_txtBusca").value;
+        var sOpcao;
+        if (acheFacilOpcaoSelecionada("rbOpcao3a")) {
+            sOpcao = "3";
+        } else {
+            if (acheFacilOpcaoSelecionada("rbOpcao2a")) {
+                sOpcao = "2";
+            } else {
+                sOpcao = "1";
+            }
+        }
+        if ((sTexto.length >= 3) && (sTexto != sAcheFacilTextoInicial)) {
+            var sUrl = "/pmsjc_paginas/AcheFacilJSON.aspx?q=" + encodeURIComponent(sTexto) + "&op=" + sOpcao;
+            $.getJSON(sUrl, function(data) {
+                var iQtde = 0;
+                for (i in data.sugestoes) {
+                    iQtde += 1;
+                } 
+                if (iQtde > 0) {
+                    // achou sugestoes
+                    var sTextoPos = document.getElementById("ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_txtBusca").value;
+                    var sOpcaoPos;
+                    if (acheFacilOpcaoSelecionada("rbOpcao3a")) {
+                        sOpcaoPos = "3";
+                    } else {
+                        if (acheFacilOpcaoSelecionada("rbOpcao2a")) {
+                            sOpcaoPos = "2";
+                        } else {
+                            sOpcaoPos = "1";
+                        }
+                    }
+                    if ((data.termo == sTextoPos) && (data.opcao == sOpcaoPos)) {
+                        var sAux = "<ul>";                        
+                        var iSugestoes=iQtde-1;
+                        for (i=0;i<iSugestoes;i++) {
+                            sAux += "<li>";
+                            sAux += "<a id=\"af_link_sugestao_" + i + "\" ";
+                            sAux += "onkeydown=\"javascript: return acheFacilNavegaSugestoes(" + i + ", event);\" ";
+                            sAux += "onfocus=\"acheFacilSugestaoGanhaFoco()\" ";
+                            sAux += "onmouseover=\"this.focus()\" "; //experimental
+        </a                 sAux += "href=\"\/pmsjc_paginas\/AcheFacilRegistra.aspx";
+                            sAux += "?is=" + encodeURIComponent(data.sugestoes[i].idsg);
+                            sAux += "&pr=" + data.sugestoes[i].pri;
+                            sAux += "&in=" + data.sugestoes[i].idpg;
+                            sAux += "&op=" + data.opcao;
+                            sAux += "&tr=" + encodeURIComponent(data.termo);
+                            sAux += "\">";
+                            if (data.sugestoes[i].pri == 3)
+                                sAux += acheFacilHtmlEncode(data.termo) + " - ";
+                            sAux += acheFacilHtmlEncode(data.sugestoes[i].suge);
+                            sAux += "<\/a>";
+                            sAux += "<\/li>\n";
+                        }
+                        // adiciona sugestao de busca do termo nas noticias
+                        sAux += "<li>";
+                        sAux += "<a id=\"af_link_sugestao_" + iQtde + "\" ";
+                        sAux += "onkeydown=\"javascript: return acheFacilNavegaSugestoes(" + iQtde + ", event);\" ";
+                        sAux += "onfocus=\"acheFacilSugestaoGanhaFoco()\" ";
+                        sAux += "onmouseover=\"this.focus()\" "; //experimental
+                        sAux += "href=\"\/noticias/lista.aspx?txt=" + encodeURIComponent(data.termo) + "\">";
+                        sAux += "Pesquisar por \"" + acheFacilHtmlEncode(data.termo) + "\" em notícias";
+                        sAux += "<\/a>";
+                        sAux += "</li>";
+                        // ===
+                        sAux += "<\/ul>";
+                        document.getElementById("ache_facil_lista_sugestoes").innerHTML = sAux;
+                        document.getElementById("ache_facil_lista_sugestoes").style.visibility = "visible";
+                    }
+                } else {
+                    // nao achou sugestoes: sugere busca do termo nas noticias
+                    var sAux2 = "<ul>";
+                    sAux2 += "<li>";
+                    sAux2 += "<a id=\"af_link_sugestao_0\" ";
+                    sAux2 += "onkeydown=\"javascript: return acheFacilNavegaSugestoes(0, event);\" ";
+                    sAux2 += "onfocus=\"acheFacilSugestaoGanhaFoco()\" ";
+                    sAux2 += "onmouseover=\"this.focus()\" "; //experimental
+                    sAux2 += "href=\"\/noticias/lista.aspx?txt=" + encodeURIComponent(data.termo) + "\">";
+                    sAux2 += "Pesquisar por \"" + acheFacilHtmlEncode(data.termo) + "\" em notícias";
+                    sAux2 += "<\/a>";
+                    sAux2 += "</li>";
+                    sAux2 += "<\/ul>";
+                    document.getElementById("ache_facil_lista_sugestoes").innerHTML = sAux2;
+                    document.getElementById("ache_facil_lista_sugestoes").style.visibility = "visible";
+                }
+            });
+        } else {
+            acheFacilEscondeSugestoes();
+        }
+    }
+
+    // Caixa de busca: ao subir a tecla
+    function acheFacilCampoBuscaSobeTecla() {
+        clearInterval(acheFacilTeclaTimeOut);
+        // acheFacilTeclaTimeOut = setTimeout("acheFacilBuscaSugestoes()", 125);
+        acheFacilTeclaTimeOut = setTimeout("acheFacilBuscaSugestoesA()", 125);
+        
+    }
+
+    // Caixa de busca: ao ganhar o foco
+    function acheFacilCampoBuscaGanhaFoco() {
+        if (document.getElementById("ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_txtBusca").value == sAcheFacilTextoInicial)
+            document.getElementById("ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_txtBusca").value = "";
+    }
+
+    // Caixa de busca: ao perder o foco
+    function acheFacilCampoBuscaPerdeFoco() {
+        if (document.getElementById("ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_txtBusca").value == "")
+            document.getElementById("ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_txtBusca").value = sAcheFacilTextoInicial;
+        clearInterval(acheFacilTeclaTimeOut);
+        clearInterval(acheFacilEscondeSugTimeOut);
+        acheFacilEscondeSugTimeOut = setTimeout("acheFacilEscondeSugestoes()", 250);
+    }
+
+    // Opcoes de busca: ao alterar opcao
+    function acheFacilMudaOpcaoDeBusca() {
+        acheFacilCampoBuscaSobeTecla();        
+    }
+
+    // Ao carregar a pagina
+    $(document).ready(function() {
+        document.getElementById("ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_txtBusca").value = sAcheFacilTextoInicial;
+        acheFacilEscondeSugestoes();
+    });
+
+    // Valida os dados para execucao da busca normal (nao sugestao)
+    function acheFacilValidaTextoParaBusca() {
+        var sTexto = document.getElementById("ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_txtBusca").value;
+        if (sTexto == "") {
+            return false;
+        } else if (sTexto == sAcheFacilTextoInicial) {
+            return false;
+        } else {
+            if (sTexto.length < 3) {
+                window.alert("Digite pelo menos 3 caracteres para realizar a busca!");
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
+    // Botao de busca: Ao clicar
+    function acheFacilBotaoBuscaClique() {
+        if (acheFacilValidaTextoParaBusca()) {
+            document.getElementById("ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_btnBuscar").click();
+        }
+    }
+
+    // Caixa de busca: ao pressionar tecla (onKeyPress)
+    function acheFacilCampoBuscaApertaTecla(e) {
+
+        var e = document.getElementById("ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_txtBusca");
+        e.autocomplete = 'off'; 
+    
+        var KEY_ENTER_CODE = 13;
+        var keyCode;
+        if (e.srcElement) keyCode = e.keyCode;
+        if (e.target) keyCode = e.which;
+        if (keyCode == KEY_ENTER_CODE) {
+            acheFacilBotaoBuscaClique();
+            return false;
+        } else {
+            return true;
+        }
+    }
+    
+    // Caixa de busca: ao descer tecla (onKeyDown)
+    function acheFacilCampoBuscaDesceTecla(e) {
+        var KEY_DOWN_CODE = 40;
+        var objLink;
+        
+        var keyCode;
+        if (e.srcElement) keyCode = e.keyCode;
+        if (e.target) keyCode = e.which;
+        
+        if (keyCode == KEY_DOWN_CODE) {
+            if (document.getElementById("ache_facil_lista_sugestoes").style.visibility == "visible") {
+                objLink = document.getElementById("af_link_sugestao_0");
+                if (objLink) objLink.focus();
+            }
+            return false;
+        } else {
+            return true;
+        }
+    }
+    
+    // Links das sugestoes: onKeyDown
+    function acheFacilNavegaSugestoes(codigoDoItem, e) {
+        var KEY_UP_CODE = 38;
+        var KEY_DOWN_CODE = 40;
+        var objLink;
+        
+        var keyCode;
+        if (e.srcElement) keyCode = e.keyCode;
+        if (e.target) keyCode = e.which;
+        
+        if (keyCode == KEY_UP_CODE) {
+            if (codigoDoItem == 0) {
+                document.getElementById("ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_txtBusca").focus();
+            } else {
+                objLink = document.getElementById("af_link_sugestao_" + (codigoDoItem - 1));
+                if (objLink) objLink.focus();
+            }
+            return false;
+        } else {
+            if (keyCode == KEY_DOWN_CODE) {
+                objLink = document.getElementById("af_link_sugestao_" + (codigoDoItem + 1));
+                if (objLink) objLink.focus();
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    // Links das sugestoes: onFocus
+    function acheFacilSugestaoGanhaFoco() {
+        clearInterval(acheFacilEscondeSugTimeOut);
+    }
+  //-->
+</script>
+
+<div id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_panAcheFacilPesquisa" class="barra_afacil_pesquisa">
+  
+<div id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_upBarraAcheFacil">
+    
+    <div class="barra_afacil_pesquisa_opcoes">
+        <div class="barra_afacil_pesquisa_opcoes_radio">
+             <label for="rbOpcao1a"><input type="radio" id="rbOpcao1a" checked="checked" value="rbOpcao1" alt="Opção 1" title="Opção 1" name="opcaoA"  onclick="javascript:acheFacilMudaOpcaoDeBusca();" onkeypress="javascript:acheFacilMudaOpcaoDeBusca();" />
+       <span class="barra_afacil_pesquisa_opcoes_texto">Em todo o site</span></label>
+        </div>
+        <div class="barra_afacil_pesquisa_opcoes_radio">
+             <label for="rbOpcao2a"><input type="radio" id="rbOpcao2a" name="opcaoA" value="rbOpcao2"  alt="Opção 2" title="Opção 2" onclick="acheFacilMudaOpcaoDeBusca()" onkeypress="javascript:acheFacilMudaOpcaoDeBusca();" />
+       <span class="barra_afacil_pesquisa_opcoes_texto">Em Serviços</span></label>
+        </div>
+        <div class="barra_afacil_pesquisa_opcoes_radio">
+             <label for="rbOpcao3a"><input type="radio" id="rbOpcao3a" name="opcaoA" value="rbOpcao3"  alt="Opção 3" title="Opção 3" onclick="acheFacilMudaOpcaoDeBusca()" onkeypress="javascript:acheFacilMudaOpcaoDeBusca();"  visible="false" />
+       <span class="barra_afacil_pesquisa_opcoes_texto">Em Notícias</span></label>
+        </div>
+        <div class="barra_afacil_pesquisa_opcoes_texto2">
+            <!--<label for="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_txtBusca">Ache fácil</label>-->
+        </div>
+    </div>
+    <div class="barra_afacil_pesquisa_busca">
+        <div class="barra_afacil_pesquisa_busca_campo_input">
+    <label for="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_txtBusca"></label>
+            <input name="ctl00$ctl00$ctl00$ctl00$ContentPlaceHolderDefault$AcheFacil_5$txtBusca" type="text" value="ACHE FÁCIL O QUE PROCURA" maxlength="30" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_txtBusca" class="barra_afacil_pesquisa_busca_input" onkeyup="acheFacilCampoBuscaSobeTecla()" onkeydown="javascript: return acheFacilCampoBuscaDesceTecla(event);" onfocus="acheFacilCampoBuscaGanhaFoco()" onblur="acheFacilCampoBuscaPerdeFoco()" onkeypress="javascript:return acheFacilCampoBuscaApertaTecla(event);" />
+            <div id="ache_facil_lista_sugestoes" class="barra_afacil_pesquisa_busca_campo_input_resultado">
+                <ul>
+                    <li><a href="#">X</a></li>
+                    <li><a href="#">Y</a></li>
+                    <li><a href="#">Z</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="barra_afacil_pesquisa_busca_campo_button">
+            <input id="ache_facil_botao_buscar_html" type="button" class="barra_afacil_pesquisa_busca_button" value="BUSCAR" onclick="acheFacilBotaoBuscaClique()" onkeypress="acheFacilBotaoBuscaClique()" />
+            <div style="display:none; visibility:hidden;">
+                <input type="button" name="ctl00$ctl00$ctl00$ctl00$ContentPlaceHolderDefault$AcheFacil_5$btnBuscar" value="BUSCAR" onclick="javascript:__doPostBack('ctl00$ctl00$ctl00$ctl00$ContentPlaceHolderDefault$AcheFacil_5$btnBuscar','')" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_AcheFacil_5_btnBuscar" class="barra_afacil_pesquisa_busca_button" onkeypress="acheFacilBotaoBuscaClique()" />
+            </div>
+        </div>
+    </div>
+    
+  </div>
+
+</div>
+                                <!-- PESQUISA -->
+                                
+                            </div>
+                            <!-- BLOCO DA DIREITA -->
+                            
+                      <div class="box_home_pmsjc_conteudo_dentro_clear_menutop">
+                        </div>
+                        
+                        <!-- MENU SUPERIOR -->
+                        <div id="rod_bloco_top">
+                            <ul>
+                                <li>
+                                    <a href="/indiceaz.aspx" target="_top" title="Índice A - Z">Índice A - Z</a>
+                                </li>
+                                <li>
+                                    <a href="/sao_jose.aspx" target="_top" title="São José">São José</a>
+                                </li>
+                                <li>
+                                    <a href="/indiceaz_servicos.aspx" target="_top" title="Cidadão">Cidadão</a>
+                                </li>
+                                <li>
+                                    <a href="/indiceaz_servicos.aspx" target="_top" title="Empresa">Empresa</a>
+                                </li>
+                                <li>
+                                    <a href="/negocios.aspx" target="_top" title="Investidor">Investidor</a>
+                                </li>
+                                <li>
+                                    <a href="/servidor.aspx" target="_top" title="Servidor">Servidor</a>
+                                </li>
+                                <li>
+                                    <a href="/prefeitura.aspx" target="_top" title="Secretarias">Secretarias</a>
+                                </li>
+                                <li>
+                                    <a href="/salaimprensa/salaimprensa.aspx" target="_top" title="Sala de Imprensa">Sala de Imprensa</a>
+                                </li>
+                                <li>
+                                    <a href="/servicos/atendimento156.aspx" target="_top" title="Contato - 156" style="padding: 10px 26px !important; border-right:none !important;">Contato - 156</a>
+                                </li>
+                            </ul>
+                        </div>
+                      <!-- MENU SUPERIOR -->
+                      
+                      
+                    </div>
+                </div>
+                <!-- CABECALHO -->
+      
+
+        <!-- CONTEUDO -->
+      <div class="box_home_pmsjc_conteudo_geral">
+        
+  <div id="coluna1">
+    <!--<div id="fundocoluna1">
+      <span class="style4">Serviços</span>
+    </div>-->
+    
+  <!-- MENU DA PAGINA PAI -->
+  <div class="cx_menu_contexpe_geral"><div class="cx_menu_contexpe_imgtop"><img src="/pmsjc_imagens/conteudo/imagens/img_top_menu_fixo.png" alt="imagem do menu fixo"/></div><div class="topicomenu">CONTATO E EXPEDIENTE</div><ul><li><span class="itemmenu"><a href="/">P&#225;gina Inicial</a></span></li><li><span class="itemmenu"><a href="http://central156sjc.ipplan.org.br/index2.asp">Atendimento 156</a></span></li><li><span class="itemmenu"><a href="http://www.sjc.sp.gov.br/prefeitura/expediente_calendario.aspx">Expediente da Prefeitura</a></span></li></ul><div class="cx_menu_contexpe_imgbot"><img src="/pmsjc_imagens/conteudo/imagens/img_bottom_menu_fixo.png" alt="imagem do menu fixo"/></div></div><div class="topicomenu">TRANSPORTES</div><ul><li><span class="itemmenu"><a href="/secretarias/transportes.aspx">In&#237;cio</a></span></li><li><span class="itemmenu"><a href="http://www.sjc.sp.gov.br/secretarias/transportes/lista.aspx">Not&#237;cias</a></span></li><li><span class="itemmenu"><a href="http://www.sjc.sp.gov.br/legislacao/Leis%20Complementares/2016/576.pdf">Lei de Mobilidade Urbana</a></span></li></ul><div class="topicomenu">SERVI&#199;OS</div><ul><li><span class="itemmenu"><a href="http://www.sjc.sp.gov.br/mapa_google_itinerario.aspx">Hor&#225;rio e Itiner&#225;rio de &#212;nibus</a></span></li><li><span class="itemmenu"><a href="http://www.sjc.sp.gov.br/secretarias/transportes/acesso_livre.aspx">Acesso Livre</a></span></li><li><span class="itemmenu"><a href="http://www.sjc.sp.gov.br/secretarias/transportes/vale_escolar.aspx">Passe Escolar</a></span></li><li><span class="itemmenu"><a href="http://www.sjc.sp.gov.br/secretarias/transportes/educatransito.aspx">Campanhas Educativas</a></span></li><li><span class="itemmenu"><a href="https://www.sjc.sp.gov.br/servicos/multas-recusos-transito.aspx">Consulta de Multas</a></span></li><li><span class="itemmenu"><a href="http://www.sjc.sp.gov.br/secretarias/transportes/rotativo.aspx">Estacionamento Rotativo</a></span></li><li><span class="itemmenu"><a href="http://www.sjc.sp.gov.br/secretarias/transportes/departamentos.aspx">Outros servi&#231;os</a></span></li></ul><div class="topicomenu">INDICADORES</div><ul><li><span class="itemmenu"><a href="/secretarias/transportes/dados_transporte_coletivo.aspx">Dados Operacionais/&#212;nibus</a></span></li><li><span class="itemmenu"><a href="https://www.sjc.sp.gov.br/secretarias/transportes/balanco_trimestral_acidentes.aspx">Balan&#231;o de acidentes</a></span></li></ul>
+  <!-- MENU DA PAGINA PAI -->
+
+  </div>
+  <div id="coluna2">
+    
+
+  <!-- BLOCO FERRAMENTAS TITULO -->
+  <div class="chapeu">
+      <div id="ferramenta_acessibilidade_content">
+        <div id="ferramentas_a" style="text-align:left;">
+          
+
+    <div class="ferramentas_acessibilidade">
+       <a href="#">TAMANHO DA LETRA</a>&nbsp;
+       <a onclick="layoutMudaTamanho(1)" style="cursor: pointer;">
+            <img src="/pmsjc_imagens/conteudo/noticias/amais.jpg" align="top" alt="Aumentar Fonte"/>
+       </a>
+       <a onclick="layoutMudaTamanho(-1)" style="cursor: pointer;">
+            <img src="/pmsjc_imagens/conteudo/noticias/amenos.jpg" align="top" alt="Diminuir Fonte" />
+       </a>
+       &nbsp;|&nbsp;
+       <a href="javascript:window.print();" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_BarraDeFerramentas_7_imprimir1" title="Abre a versão para impressão">
+            <img src="/pmsjc_imagens/conteudo/noticias/imprimir.jpg" align="top" alt="Imprimir"/>
+       </a>
+       <a href="javascript:window.print();" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_BarraDeFerramentas_7_imprimir2" title="Abre a versão para impressão">
+            IMPRIMIR
+       </a>
+       &nbsp;|&nbsp;
+       <a href="/servicos/enviar_email.aspx?codigo=H6174&acao=d&opcao=&txt=&id_linha=96" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_BarraDeFerramentas_7_enviarEmail1" title="Abre o formulário para enviar esta página para um endereço de e-mail">
+            <img src="/pmsjc_imagens/conteudo/noticias/email.jpg" align="top" alt="Enviar por e-mail" />
+       </a>
+       <a href="/servicos/enviar_email.aspx?codigo=H6174&acao=d&opcao=&txt=&id_linha=96" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_BarraDeFerramentas_7_enviarEmail2" title="Abre o formulário para enviar esta página para um endereço de e-mail">
+            ENVIAR POR E-MAIL
+       </a>
+       &nbsp;|&nbsp;
+       <a href="/servicos/comunicar_erro.aspx?codigo=H6174&acao=d&opcao=&txt=&id_linha=96" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_BarraDeFerramentas_7_comunicarErro1" title="Abre o formulário para comunicar erros nesta página">
+            <img src="/pmsjc_imagens/conteudo/noticias/erro.jpg" align="top" alt="Comunicar Erro" />
+       </a>
+       <a href="/servicos/comunicar_erro.aspx?codigo=H6174&acao=d&opcao=&txt=&id_linha=96" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_BarraDeFerramentas_7_comunicarErro2" title="Abre o formulário para comunicar erros nesta página">
+            COMUNICAR ERRO
+       </a>
+    </div>
+ 
+
+        </div>
+      </div>
+      <div id="nomesecretaria" class="nomem">
+        <a name="conteudo_principal"></a>
+        Hor&#225;rios e Itiner&#225;rios de &#212;nibus
+      </div>
+      <div class="clear_secretaria_foto">
+      </div>
+  </div>
+  <!-- BLOCO FERRAMENTAS TITULO -->
+  
+  <div id="conteudo_sec">
+    <div id="corpo" style="width:100%; clear:both;">
+      
+<style type="text/css" media="print">
+    #div_horario_itinerario_onibus_contato {
+        display: none;
+    }
+</style>
+
+<style type="text/css">
+table
+{
+float:left;
+}
+</style>
+
+
+<!-- PAINEL DA PESQUISA: INICIO -->
+
+<!-- PAINEL DA PESQUISA: FIM -->
+<!-- PAINEL DOS DETALHES: INICIO -->
+<div id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_ctl02_horario_itinerario_onibus_layTab_8_panDetalhes">
+  
+    <table cellspacing="2" cellpadding="2" width="100%" align="center" border="0">
+        <tr>
+            <td>
+                  <div class="texto" align="justify">
+                    <!-- Conteúdo -->
+                     <table width="100%" border="0" align="center" cellpadding="2" cellspacing="0">
+                                            <tr valign="top" class="textosm">
+                            <!--codigo da linha-->
+                            <td width="100">
+                                <strong>Número da Linha:</strong>
+                            </td>
+                            <td>
+                                <span id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_ctl02_horario_itinerario_onibus_layTab_8_lblNumeroLinha">212</span>
+                            </td>
+                        </tr>
+                        <tr valign="top" class="textosm">
+                            <!--descricao da linha-->
+                            <td>
+                                <strong>Nome da Linha:</strong>
+                            </td>
+                            <td>
+                                <span id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_ctl02_horario_itinerario_onibus_layTab_8_lblNomeLinha">PUTIM / TERMINAL CENTRAL – VIA AV. DOS ASTRONAUTAS (CIRCULAR NO CENTRO) O.S.O. 60</span>
+                            </td>
+                        </tr>
+                        <tr valign="top" class="textosm">
+                            <!--Sentido-->
+                            <td>
+                                <strong>Sentido:</strong>
+                            </td>
+                            <td>
+                                <span id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_ctl02_horario_itinerario_onibus_layTab_8_lblSentido">PUTIM / TERMINAL CENTRAL</span>
+                            </td>
+                        </tr>
+                        <tr valign="top" class="textosm">
+                            <!--Itinerário-->
+                            <td>
+                                <strong>Itinerário:</strong>
+                            </td>
+                            <td>
+                                <span id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_ctl02_horario_itinerario_onibus_layTab_8_lblItinerario">RUA CARLOS A. DE P. TORO – RUA MESSIAS DE ALVARENGA – AV. JOAO RODOLFO CASTELLI – AV. JOSE IGNACIO BICUDO – RUA JOSE GONCALVES CAMPOS – AV. JOSE IGNACIO BICUDO – AV. JOAO RODOLFO CASTELLI – RUA ITATIAIA – RUA TURUMIRIM – RUA NEPOMUCENO – AV. JOAO RODOLFO CASTELLI – ESTR. MUNIC. GLAUDISTON P. DE OLIVEIRA – AV. DOMINGOS MALDONADO CAMPOY – AV. BRIG. FARIA LIMA – AV. DOS ASTRONAUTAS – VD. DOS BANDEIRANTES – RUA BAHIA – RUA TUPA – PCA CAP. PEDRO PINTO DA CUNHA – AV. PEDRO A. CABRAL – VD. RAQUEL MARCONDES – RUA CEL. MORAES – RUA FRANCISCO RAFAEL – RUA SIQUEIRA CAMPOS – PCA PADRE JOAO – TERMINAL CENTRAL</span>
+                            </td>
+                        </tr>
+                        <tr valign="top" class="textosm">
+                            <!--Itinerário-->
+                            <td>
+                                <strong>Observação:</strong>
+                            </td>
+                            <td>
+                                <span id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_ctl02_horario_itinerario_onibus_layTab_8_lblObservacao">AOS SABADOS E DOMINGOS TODAS AS VIAGENS ENTRAM NO VILA ADRIANA.</span>
+                            </td>
+                        </tr>                        
+                        <tr valign="bottom">
+                            <!--Título : Horários-->
+                            <td colspan="2" class="texto">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="observacoes" align="center"><span id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_ctl02_horario_itinerario_onibus_layTab_8_lblAtualizadoEm">Atualizado em: 06/12/2014</span></div>
+                    <br />
+                    <div style="width: 100%; clear: both;">
+                         <p class="textosm">
+                         <b>Horários:</b>
+                         </p>
+                    </div>
+                    
+                    <span id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_ctl02_horario_itinerario_onibus_layTab_8_lblResultado" class="textosm"><table width = '33%' border='0' cellpadding = '2' cellspacing = '2' bordercolor='FFFFFF'> <tr><td align='center'><table width = '100%' border='0' cellpadding = '0' cellspacing = '0' style='border-collapse:collapse; border: none;'><tr><td colspan = '4' align='center' style='border: 1px solid black'><b>De segunda-feira a sexta-feira</b></td> </tr><tr><td colspan = '4' style='border: none'><div style='font-size:4px'>&nbsp;</div></td></tr><tr><td align='center' width = '25%' style='border: 1px solid black'><b>0 às 6h</b></td><td align='center' width = '25%' style='border: 1px solid black'><b>6 às 12h</b></td><td align='center' width = '25%' style='border: 1px solid black'><b>12 às 18h</b></td><td align='center' width = '25%' style='border: 1px solid black'><b>18 às 24h</b></td></tr><tr><td align='center' style='border: 1px solid black'>05:10</td><td align='center' style='border: 1px solid black'>06:12</td><td align='center' style='border: 1px solid black'>12:25(1)</td><td align='center' style='border: 1px solid black'>18:32(1)</td></tr><tr><td align='center' style='border: 1px solid black'>05:44</td><td align='center' style='border: 1px solid black'>06:40</td><td align='center' style='border: 1px solid black'>12:55(1)</td><td align='center' style='border: 1px solid black'>19:06(1)</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>07:08</td><td align='center' style='border: 1px solid black'>13:25(1)</td><td align='center' style='border: 1px solid black'>19:45(1)</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>07:36</td><td align='center' style='border: 1px solid black'>14:00(1)</td><td align='center' style='border: 1px solid black'>20:32(1)</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>08:04</td><td align='center' style='border: 1px solid black'>14:34(1)</td><td align='center' style='border: 1px solid black'>21:06(1)</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>08:32</td><td align='center' style='border: 1px solid black'>15:08(1)</td><td align='center' style='border: 1px solid black'>21:40(1)</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>09:00</td><td align='center' style='border: 1px solid black'>15:42(1)</td><td align='center' style='border: 1px solid black'>22:12(1)</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>09:50(1)</td><td align='center' style='border: 1px solid black'>16:16(1)</td><td align='center' style='border: 1px solid black'>23:06(1)</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>10:25(1)</td><td align='center' style='border: 1px solid black'>16:50(1)</td><td align='center' style='border: 1px solid black'>23:45(1)</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>10:55(1)</td><td align='center' style='border: 1px solid black'>17:24(1)</td><td align='center' style='border: 1px solid black'></td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>11:25(1)</td><td align='center' style='border: 1px solid black'>17:40(1)</td><td align='center' style='border: 1px solid black'></td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>11:55(1)</td><td align='center' style='border: 1px solid black'>17:58(1)</td><td align='center' style='border: 1px solid black'></td></tr></table></td></tr></table><table width = '33%' border='0' cellpadding = '2' cellspacing = '2' bordercolor='FFFFFF'> <tr><td align='center'><table width = '100%' border='0' cellpadding = '0' cellspacing = '0' style='border-collapse:collapse; border: none;'><tr><td colspan = '4' align='center' style='border: 1px solid black'><b>Aos s&#225;bados</b></td> </tr><tr><td colspan = '4' style='border: none'><div style='font-size:4px'>&nbsp;</div></td></tr><tr><td align='center' width = '25%' style='border: 1px solid black'><b>0 às 6h</b></td><td align='center' width = '25%' style='border: 1px solid black'><b>6 às 12h</b></td><td align='center' width = '25%' style='border: 1px solid black'><b>12 às 18h</b></td><td align='center' width = '25%' style='border: 1px solid black'><b>18 às 24h</b></td></tr><tr><td align='center' style='border: 1px solid black'>00:50</td><td align='center' style='border: 1px solid black'>06:12</td><td align='center' style='border: 1px solid black'>12:06</td><td align='center' style='border: 1px solid black'>18:52</td></tr><tr><td align='center' style='border: 1px solid black'>05:00</td><td align='center' style='border: 1px solid black'>06:48</td><td align='center' style='border: 1px solid black'>12:38</td><td align='center' style='border: 1px solid black'>19:34</td></tr><tr><td align='center' style='border: 1px solid black'>05:36</td><td align='center' style='border: 1px solid black'>07:22</td><td align='center' style='border: 1px solid black'>13:10</td><td align='center' style='border: 1px solid black'>20:20</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>07:54</td><td align='center' style='border: 1px solid black'>13:42</td><td align='center' style='border: 1px solid black'>21:05</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>08:26</td><td align='center' style='border: 1px solid black'>13:42(2)</td><td align='center' style='border: 1px solid black'>21:55</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>09:26</td><td align='center' style='border: 1px solid black'>14:46</td><td align='center' style='border: 1px solid black'>22:50</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>09:58</td><td align='center' style='border: 1px solid black'>15:32</td><td align='center' style='border: 1px solid black'>23:40</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>10:30</td><td align='center' style='border: 1px solid black'>16:00</td><td align='center' style='border: 1px solid black'></td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>11:02</td><td align='center' style='border: 1px solid black'>16:32</td><td align='center' style='border: 1px solid black'></td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>11:34</td><td align='center' style='border: 1px solid black'>17:04(2)</td><td align='center' style='border: 1px solid black'></td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>17:52</td><td align='center' style='border: 1px solid black'></td></tr></table></td></tr></table><table width = '33%' border='0' cellpadding = '2' cellspacing = '2' bordercolor='FFFFFF'> <tr><td align='center'><table width = '100%' border='0' cellpadding = '0' cellspacing = '0' style='border-collapse:collapse; border: none;'><tr><td colspan = '4' align='center' style='border: 1px solid black'><b>Aos domingos e feriados</b></td> </tr><tr><td colspan = '4' style='border: none'><div style='font-size:4px'>&nbsp;</div></td></tr><tr><td align='center' width = '25%' style='border: 1px solid black'><b>0 às 6h</b></td><td align='center' width = '25%' style='border: 1px solid black'><b>6 às 12h</b></td><td align='center' width = '25%' style='border: 1px solid black'><b>12 às 18h</b></td><td align='center' width = '25%' style='border: 1px solid black'><b>18 às 24h</b></td></tr><tr><td align='center' style='border: 1px solid black'>00:45</td><td align='center' style='border: 1px solid black'>06:48</td><td align='center' style='border: 1px solid black'>12:51</td><td align='center' style='border: 1px solid black'>18:15</td></tr><tr><td align='center' style='border: 1px solid black'>05:00</td><td align='center' style='border: 1px solid black'>07:42</td><td align='center' style='border: 1px solid black'>13:45(2)</td><td align='center' style='border: 1px solid black'>19:32</td></tr><tr><td align='center' style='border: 1px solid black'>05:54</td><td align='center' style='border: 1px solid black'>08:36</td><td align='center' style='border: 1px solid black'>14:39</td><td align='center' style='border: 1px solid black'>20:26</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>09:56</td><td align='center' style='border: 1px solid black'>15:33</td><td align='center' style='border: 1px solid black'>21:20</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>10:50</td><td align='center' style='border: 1px solid black'>16:27(2)</td><td align='center' style='border: 1px solid black'>22:30</td></tr><tr><td align='center' style='border: 1px solid black'></td><td align='center' style='border: 1px solid black'>11:57</td><td align='center' style='border: 1px solid black'>17:21</td><td align='center' style='border: 1px solid black'>23:35</td></tr></table></td></tr></table><br><div style='width: 100%; clear: both;'><p class='textosm'>(1) ATENDE AO VILA ADRIANA <br>(2) CDP<br></p></div></span>
+                    <!-- FIM - Conteúdo -->
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</div>
+<!-- PAINEL DOS DETALHES: FIM -->
+<!-- PAINEL DO MAPA: INICIO -->
+
+
+<!-- PAINEL DO MAPA: FIM -->
+
+<div id="div_horario_itinerario_onibus_contato" class="textosm">
+    <p>
+        <b>Contato</b>
+    </p>
+    <p>
+        Para atendimento, ligue gratuitamente para o número 156 - funciona de 
+        segunda a sábado das 6h às 22h e domingo das 8h às 20h, exceto feriados. 
+        Ou acesse o atendimento on-line, 
+        <a href="http://www.sjc.sp.gov.br/servicos/atendimento156.aspx" target="_top">Atendimento 156 on-line</a>.
+    </p>
+</div>
+    </div>
+  </div><!-- conteudo_sec -->
+  
+  <div id="ferramentas_a2" style="margin-top:20px; padding-top:20px;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td width="20%" valign="bottom" style="text-align:left;">
+          <a href="javascript:history.back();">
+            <img src="/pmsjc_imagens/voltar.gif" width="52" height="21" border="0" alt="Voltar" align="top" />
+          </a>
+        </td>
+        <td width="80%" valign="bottom" style="text-align:right; padding-bottom:1px;">
+          
+
+    <div class="ferramentas_acessibilidade">
+       <a href="#">TAMANHO DA LETRA</a>&nbsp;
+       <a onclick="layoutMudaTamanho(1)" style="cursor: pointer;">
+            <img src="/pmsjc_imagens/conteudo/noticias/amais.jpg" align="top" alt="Aumentar Fonte"/>
+       </a>
+       <a onclick="layoutMudaTamanho(-1)" style="cursor: pointer;">
+            <img src="/pmsjc_imagens/conteudo/noticias/amenos.jpg" align="top" alt="Diminuir Fonte" />
+       </a>
+       &nbsp;|&nbsp;
+       <a href="javascript:window.print();" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_BarraDeFerramentas_9_imprimir1" title="Abre a versão para impressão">
+            <img src="/pmsjc_imagens/conteudo/noticias/imprimir.jpg" align="top" alt="Imprimir"/>
+       </a>
+       <a href="javascript:window.print();" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_BarraDeFerramentas_9_imprimir2" title="Abre a versão para impressão">
+            IMPRIMIR
+       </a>
+       &nbsp;|&nbsp;
+       <a href="/servicos/enviar_email.aspx?codigo=H6174&acao=d&opcao=&txt=&id_linha=96" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_BarraDeFerramentas_9_enviarEmail1" title="Abre o formulário para enviar esta página para um endereço de e-mail">
+            <img src="/pmsjc_imagens/conteudo/noticias/email.jpg" align="top" alt="Enviar por e-mail" />
+       </a>
+       <a href="/servicos/enviar_email.aspx?codigo=H6174&acao=d&opcao=&txt=&id_linha=96" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_BarraDeFerramentas_9_enviarEmail2" title="Abre o formulário para enviar esta página para um endereço de e-mail">
+            ENVIAR POR E-MAIL
+       </a>
+       &nbsp;|&nbsp;
+       <a href="/servicos/comunicar_erro.aspx?codigo=H6174&acao=d&opcao=&txt=&id_linha=96" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_BarraDeFerramentas_9_comunicarErro1" title="Abre o formulário para comunicar erros nesta página">
+            <img src="/pmsjc_imagens/conteudo/noticias/erro.jpg" align="top" alt="Comunicar Erro" />
+       </a>
+       <a href="/servicos/comunicar_erro.aspx?codigo=H6174&acao=d&opcao=&txt=&id_linha=96" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_BarraDeFerramentas_9_comunicarErro2" title="Abre o formulário para comunicar erros nesta página">
+            COMUNICAR ERRO
+       </a>
+    </div>
+ 
+
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+  <!--<div style="margin-bottom:20px;" class="nao_imprime">      
+    <table width="500" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>
+          Aqui havia macroCaixaDeBusca com OrigemDadosBusca="S".
+        </td>
+      </tr>
+    </table>
+  </div>-->
+  
+ 
+  </div>
+
+        <div class="box_home_pmsjc_conteudo_geral_clear">
+        </div>
+      </div>
+        <!-- CONTEUDO -->
+
+      
+      
+      
+       <!-- RODAPE -->
+        <div class="box_home_pmsjc_rodape">
+                
+                  <!-- RODAPE DENTRO -->
+                  <div class="box_home_pmsjc_rodape_dentro">
+                    
+                        <div class="box_home_pmsjc_rodape_conteudo_geral_meio_clear">
+                        </div>
+                        
+            <!-- MEIO -->
+                        <div class="box_home_pmsjc_rodape_conteudo_geral_meio">
+                          <div id="box_home_pmsjc_rodape_logo">
+                              <a href="/home.aspx" title="Brasão">
+                                  <img src="/pmsjc_imagens/rodape/brasao.png" width="346" height="130" border="0" alt="Brasão" />
+                              </a>
+                          </div>
+                          <div id="box_home_pmsjc_rodape_selo_capa_aaadasilva_w3c">
+                              <div class="box_home_pmsjc_rodape_selo_capa_info">
+                                  Selos de Aprovação de Site Acessível.
+                              </div>
+                              <div class="box_home_pmsjc_rodape_selo_capa_separador">
+                              </div>
+                              <div class="box_home_pmsjc_rodape_selo_capa_imagem">
+                                  <a href="http://validator.w3.org/check?uri=referer" title="Valid XHTML 1.0 Transitional">
+                                 <img src="/pmsjc_imagens/rodape/xhtml.png" width="88" height="31" border="0" alt="Valid XHTML 1.0 Transitional" />
+                                    </a>
+                                    <a href="http://jigsaw.w3.org/css-validator/check/referer" title="CSS válido!">
+                                     <img src="/pmsjc_imagens/rodape/vcss-blue.png" width="88" height="31" border="0" alt="CSS válido!" />
+                                    </a>
+                                    <a href="#" title="Selo Da Silva">
+                                     <img src="/pmsjc_imagens/rodape/aaa_dasilva.png" width="76" height="31" border="0" alt="Selo Da Silva" />
+                                    </a>
+                              </div>
+              </div>
+            </div>
+            <!-- MEIO -->
+                        
+                        <div class="box_home_pmsjc_rodape_conteudo_geral_endereco">
+                          Rua José de Alencar, 123 – Vila Santa Luzia – CEP 12.209-904 – Telefone: 156 (ligação gratuita) – PABX + 55 (12) 3947-8000<br />
+              Desenvolvido pela Prefeitura Municipal de São José dos Campos - Todos os direitos reservados
+                        </div>
+                
+                    </div>
+                    <!-- RODAPE DENTRO -->
+                    
+        </div>
+        <!-- RODAPE -->
+                
+    </div>
+    <!-- HOME -->
+      
+      
+    
+<div>
+
+  <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</script>
+</form>
+  </body>
+  
+</html>
