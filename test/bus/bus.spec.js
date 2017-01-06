@@ -56,8 +56,10 @@ describe('transformCSVArrayToObject', function () {
   })
 
   it.only('getScheduleTimes - should parse the page and return the schedule of buses', function*() {
-    let cheerioTable = cheerio.load(rawEntirePage)
-    let result = yield busModule.addIdToItems(cheerioTable)
+    let cheerioEntirePage = cheerio.load(rawEntirePage)
+    cheerioTableparser(cheerioEntirePage)
+
+    let result = yield busModule.parseDetailsPage(cheerioEntirePage)
       // let result = yield busModule.getScheduleTimes(cheerioTable)
       // assert.deepEqual(result, '')
   })
