@@ -45,7 +45,7 @@ describe('transformCSVArrayToObject', function () {
     assert.deepEqual(result, parsedList)
   })
 
-  it('parseBuses - should parse and return', function*() {
+  it('parseBuses - should parse and return', function* () {
     let teste = [{
       'teste': 1
     }, {
@@ -55,12 +55,30 @@ describe('transformCSVArrayToObject', function () {
       // assert.deepEqual(result, teste)
   })
 
-  it.only('getScheduleTimes - should parse the page and return the schedule of buses', function*() {
+  it.only('getScheduleTimes - should parse the page and return the schedule of buses', function* () {
     let cheerioEntirePage = cheerio.load(rawEntirePage)
     cheerioTableparser(cheerioEntirePage)
 
     let result = yield busModule.parseDetailsPage(cheerioEntirePage)
       // let result = yield busModule.getScheduleTimes(cheerioTable)
       // assert.deepEqual(result, '')
+  })
+
+  it('chunkScheduleByPeriod: should split the schedule by dawn, morning, afternoon and night', function () {
+    let rawInput = {
+      'dawn': ['De segunda-feira a sexta-feira', '0 às 6h', '05:10', '05:44', 'Aos sábados  0 às 6h6 às 12h12 às 18h18 às 24h00:5006:1212:0618:5205:0006:4812:3819:3405:3607:2213:1020:2007:5413:4221:0508:2613:42(2)21:5509:2614:4622:5009:5815:3223:4010:3016:0011:0216:3211:3417:04(2)17:52', 'Aos sábados', '0 às 6h', '00:50', '05:00', '05:36', 'Aos domingos e feriados  0 às 6h6 às 12h12 às 18h18 às 24h00:4506:4812:5118:1505:0007:4213:45(2)19:3205:5408:3614:3920:2609:5615:3321:2010:5016:27(2)22:3011:5717:2123:35', 'Aos domingos e feriados', '0 às 6h', '00:45', '05:00', '05:54'],
+      'morning': ['De segunda-feira a sexta-feira', 'De segunda-feira a sexta-feira', '6 às 12h', '06:12', '06:40', '07:08', '07:36', '08:04', '08:32', '09:00', '09:50(1)', '10:25(1)', '10:55(1)', '11:25(1)', '11:55(1)', 'Aos sábados', 'Aos sábados', '6 às 12h', '06:12', '06:48', '07:22', '07:54', '08:26', '09:26', '09:58', '10:30', '11:02', '11:34', 'Aos domingos e feriados', 'Aos domingos e feriados', '6 às 12h', '06:48', '07:42', '08:36', '09:56', '10:50', '11:57'],
+      'afternoon': ['De segunda-feira a sexta-feira', 'De segunda-feira a sexta-feira', '12 às 18h', '12:25(1)', '12:55(1)', '13:25(1)', '14:00(1)', '14:34(1)', '15:08(1)', '15:42(1)', '16:16(1)', '16:50(1)', '17:24(1)', '17:40(1)', '17:58(1)', 'Aos sábados', 'Aos sábados', '12 às 18h', '12:06', '12:38', '13:10', '13:42', '13:42(2)', '14:46', '15:32', '16:00', '16:32', '17:04(2)', '17:52', 'Aos domingos e feriados', 'Aos domingos e feriados', '12 às 18h', '12:51', '13:45(2)', '14:39', '15:33', '16:27(2)', '17:21'],
+      'night': ['De segunda-feira a sexta-feira', 'De segunda-feira a sexta-feira', '18 às 24h', '18:32(1)', '19:06(1)', '19:45(1)', '20:32(1)', '21:06(1)', '21:40(1)', '22:12(1)', '23:06(1)', '23:45(1)', 'Aos sábados', 'Aos sábados', '18 às 24h', '18:52', '19:34', '20:20', '21:05', '21:55', '22:50', '23:40', 'Aos domingos e feriados', 'Aos domingos e feriados', '18 às 24h', '18:15', '19:32', '20:26', '21:20', '22:30', '23:35']
+    }
+
+    let expectedDawn = {
+      weekDay: [],
+      saturday: [],
+      sunday: []
+    }
+
+    let result = busModule.chunkScheduleByPeriod(rawInput)
+    expect(result.dawn)
   })
 })
