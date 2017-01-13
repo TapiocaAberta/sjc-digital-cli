@@ -60,6 +60,8 @@ describe('transformCSVArrayToObject', function () {
       'route': 'http://www.sjc.sp.gov.br/secretarias/transportes/horario-e-itinerario.aspx?acao=m&id_linha=2'
     }]
 
+    // TODO: add nock in other to simulate http requests
+
     let result = yield busModule.parseBuses(buses)
     assert.deepEqual(result, buses)
   })
