@@ -8,12 +8,17 @@
     "url": "github.com/sjcdigital"
   },
   "bin": "dist/cli.js",
+  "bugs": {
+    "url": "https://github.com/sjcdigital/sjc-digital-cli/issues",
+    "email": "pauloluan.inova@gmail.com"
+  },
   "dependencies": {
     "cheerio": "^0.22.0",
     "cheerio-tableparser": "^1.0.1",
     "co": "^4.6.0",
     "lodash": "^4.17.2",
     "meow": "^3.7.0",
+    "nock": "^9.0.2",
     "request": "^2.79.0",
     "request-promise": "^4.1.1"
   },
