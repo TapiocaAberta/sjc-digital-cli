@@ -3,13 +3,14 @@
 
 require('co-mocha')
 
-const busModule = require('../../lib/bus')
 const assert = require('assert')
 const nock = require('nock')
+const rewire = require('rewire')
 const cheerio = require('cheerio')
 const cheerioTableparser = require('cheerio-tableparser')
+const busModule = rewire('../../lib/bus')
 
-let rawHomePage = require('fs').readFileSync('test/bus/details_page_example.txt', 'utf8')
+let rawHomePage = require('fs').readFileSync('test/bus/home_page.txt', 'utf8')
 let rawDetailsPage = require('fs').readFileSync('test/bus/details_page_example.txt', 'utf8')
 
 describe('transformCSVArrayToObject', function () {
@@ -70,7 +71,8 @@ describe('transformCSVArrayToObject', function () {
       .get('/secretarias/mobilidade_urbana/horario-e-itinerario.aspx?acao=d&id_linha=96')
       .reply(200, rawDetailsPage)
 
-    let result = yield busModule.parseBuses(buses)
+    let parseBuses = busModule.__get__('parseBuses')
+    let result = yield parseBuses(buses)
     assert.deepEqual(result, {})
   })
 
