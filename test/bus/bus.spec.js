@@ -124,16 +124,14 @@ describe('transformCSVArrayToObject', function () {
     assert.deepEqual(parsedBus, parsedTimesDetails)
   })
 
-  it.skip('getScheduleTimes - should parse the page and return the schedule of buses', function* () {
+  it('getScheduleTimes - should parse the details page and give the parsed results', function* () {
     let cheerioEntirePage = cheerio.load(rawDetailsPage)
     cheerioTableparser(cheerioEntirePage)
 
     let parseDetailsPage = busModule.__get__('parseDetailsPage')
     let result = yield parseDetailsPage(cheerioEntirePage)
 
-    assert.deepEqual(result, '')
-      // let result = yield busModule.getScheduleTimes(cheerioTable)
-      // assert.deepEqual(result, '')
+    assert.deepEqual(result, parsedTimesDetails)
   })
 
   it('chunkScheduleByPeriod: should split the schedule by dawn, morning, afternoon and night', function () {
