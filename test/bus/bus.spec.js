@@ -14,7 +14,13 @@ let rawHomePage = require('fs').readFileSync('test/bus/home_page.txt', 'utf8')
 let rawDetailsPage = require('fs').readFileSync('test/bus/details_page_example.txt', 'utf8')
 
 let parsedTimesDetails = {
-  'routes': {},
+  'routes': {
+    'number': '212',
+    'line': 'PUTIM / TERMINAL CENTRAL – VIA AV. DOS ASTRONAUTAS (CIRCULAR NO CENTRO) O.S.O. 60',
+    'direction': 'PUTIM / TERMINAL CENTRAL',
+    'itinerary': 'RUA CARLOS A. DE P. TORO – RUA MESSIAS DE ALVARENGA – AV. JOAO RODOLFO CASTELLI – AV. JOSE IGNACIO BICUDO – RUA JOSE GONCALVES CAMPOS – AV. JOSE IGNACIO BICUDO – AV. JOAO RODOLFO CASTELLI – RUA ITATIAIA – RUA TURUMIRIM – RUA NEPOMUCENO – AV. JOAO RODOLFO CASTELLI – ESTR. MUNIC. GLAUDISTON P. DE OLIVEIRA – AV. DOMINGOS MALDONADO CAMPOY – AV. BRIG. FARIA LIMA – AV. DOS ASTRONAUTAS – VD. DOS BANDEIRANTES – RUA BAHIA – RUA TUPA – PCA CAP. PEDRO PINTO DA CUNHA – AV. PEDRO A. CABRAL – VD. RAQUEL MARCONDES – RUA CEL. MORAES – RUA FRANCISCO RAFAEL – RUA SIQUEIRA CAMPOS – PCA PADRE JOAO – TERMINAL CENTRAL',
+    'observation': 'AOS SABADOS E DOMINGOS TODAS AS VIAGENS ENTRAM NO VILA ADRIANA.'
+  },
   'times': {
     'dawn': {
       'week': ['05:10', '05:44'],
@@ -172,5 +178,15 @@ describe('transformCSVArrayToObject', function () {
     let chunkScheduleByPeriod = busModule.__get__('chunkScheduleByPeriod')
     let result = chunkScheduleByPeriod(rawInput)
     assert.deepEqual(result, expectedDawn)
+  })
+
+  it('getRouteMetadata - should extract the route data from page', function* () {
+    let cheerioEntirePage = cheerio.load(rawDetailsPage)
+    cheerioTableparser(cheerioEntirePage)
+
+    let getRouteMetadata = busModule.__get__('getRouteMetadata')
+    let result = yield getRouteMetadata(cheerioEntirePage)
+
+    assert.deepEqual(result, parsedTimesDetails.routes)
   })
 })
