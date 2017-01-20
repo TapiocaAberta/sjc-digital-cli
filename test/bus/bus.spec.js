@@ -19,7 +19,7 @@ let parsedTimesDetails = {
     'line': 'PUTIM / TERMINAL CENTRAL – VIA AV. DOS ASTRONAUTAS (CIRCULAR NO CENTRO) O.S.O. 60',
     'direction': 'PUTIM / TERMINAL CENTRAL',
     'itinerary': 'RUA CARLOS A. DE P. TORO – RUA MESSIAS DE ALVARENGA – AV. JOAO RODOLFO CASTELLI – AV. JOSE IGNACIO BICUDO – RUA JOSE GONCALVES CAMPOS – AV. JOSE IGNACIO BICUDO – AV. JOAO RODOLFO CASTELLI – RUA ITATIAIA – RUA TURUMIRIM – RUA NEPOMUCENO – AV. JOAO RODOLFO CASTELLI – ESTR. MUNIC. GLAUDISTON P. DE OLIVEIRA – AV. DOMINGOS MALDONADO CAMPOY – AV. BRIG. FARIA LIMA – AV. DOS ASTRONAUTAS – VD. DOS BANDEIRANTES – RUA BAHIA – RUA TUPA – PCA CAP. PEDRO PINTO DA CUNHA – AV. PEDRO A. CABRAL – VD. RAQUEL MARCONDES – RUA CEL. MORAES – RUA FRANCISCO RAFAEL – RUA SIQUEIRA CAMPOS – PCA PADRE JOAO – TERMINAL CENTRAL',
-    'observation': 'AOS SABADOS E DOMINGOS TODAS AS VIAGENS ENTRAM NO VILA ADRIANA.'
+    'observation': 'AOS SABADOS E DOMINGOS TODAS AS VIAGENS ENTRAM NO VILA ADRIANA.\n(1) ATENDE AO VILA ADRIANA (2) CDP'
   },
   'times': {
     'dawn': {
@@ -188,5 +188,15 @@ describe('transformCSVArrayToObject', function () {
     let result = yield getRouteMetadata(cheerioEntirePage)
 
     assert.deepEqual(result, parsedTimesDetails.routes)
+  })
+
+  it('getObservationInfo - should extract the observation data', function* () {
+    let cheerioEntirePage = cheerio.load(rawDetailsPage)
+    cheerioTableparser(cheerioEntirePage)
+
+    let getObservationInfo = busModule.__get__('getObservationInfo')
+    let result = getObservationInfo(cheerioEntirePage)
+
+    assert.deepEqual(result, '(1) ATENDE AO VILA ADRIANA (2) CDP')
   })
 })
