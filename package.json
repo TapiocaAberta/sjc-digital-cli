@@ -16,6 +16,7 @@
     "cheerio": "^0.22.0",
     "cheerio-tableparser": "^1.0.1",
     "co": "^4.6.0",
+    "colors": "^1.1.2",
     "lodash": "^4.17.2",
     "meow": "^3.7.0",
     "nock": "^9.0.2",
