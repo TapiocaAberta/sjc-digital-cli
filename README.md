@@ -33,5 +33,7 @@ MIT © [Paulo Luan](github.com/pauloluan)
 [daviddm-url]: https://david-dm.org/sjcdigital/sjc-digital-cli
 [coveralls-image]: https://coveralls.io/repos/sjcdigital/sjc-digital-cli/badge.svg
 [coveralls-url]: https://coveralls.io/r/sjcdigital/sjc-digital-cli
+[codecov-url]: https://codecov.io/github/sjcdigital/sjc-digital-cli
+[codecov-image]: https://img.shields.io/codecov/c/github/sjcdigital/sjc-digital-cli/master.svg?style=flat-square
 [standard-image]: https://cdn.rawgit.com/feross/standard/master/badge.svg
 [standard-url]: https://github.com/feross/standard

@@ -22,7 +22,7 @@ gulp.task('static', function () {
     .pipe(standard())
     .pipe(standard.reporter('default', {
       breakOnError: true,
-      quiet: true
+      quiet: false
     }))
 })
 
@@ -70,8 +70,7 @@ gulp.task('coveralls', ['test'], function () {
 
   // return gulp.src(path.join(__dirname, 'coverage/lcov.info')).pipe(coveralls())
 
-  return gulp.src('./coverage/lcov.info')
-  .pipe(codecov())
+  return gulp.src('./coverage/lcov.info').pipe(codecov())
 })
 
 gulp.task('babel', ['clean'], function () {
