@@ -3,7 +3,7 @@
 [![NPM version][npm-image]][npm-url] 
 [![Build Status][travis-image]][travis-url] 
 [![Dependency Status][daviddm-image]][daviddm-url] 
-[![Coverage percentage][coveralls-image]][coveralls-url]
+[![Coverage percentage][codecov-image]][codecov-url]
 
 > CLI app to scrap and download open data from São José dos Campos
 
