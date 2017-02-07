@@ -8,9 +8,10 @@ const nock = require('nock')
 const rewire = require('rewire')
 const cheerio = require('cheerio')
 const cheerioTableparser = require('cheerio-tableparser')
-const busModule = rewire('../../lib/bus')
+const Bus = rewire('../../lib/bus')
+const bus = new Bus()
 
-let rawHomePage = require('fs').readFileSync('test/bus/home_page.txt', 'utf8')
+// let rawHomePage = require('fs').readFileSync('test/bus/home_page.txt', 'utf8')
 let rawDetailsPage = require('fs').readFileSync('test/bus/details_page_example.txt', 'utf8')
 
 let parsedTimesDetails = {
@@ -56,8 +57,7 @@ describe('transformCSVArrayToObject', function () {
       .get('/secretarias/mobilidade_urbana/horario-e-itinerario.aspx?acao=d&id_linha=96')
       .reply(200, rawDetailsPage)
 
-    let getPage = busModule.__get__('getPage')
-    let $ = yield getPage('http://www.sjc.sp.gov.br/secretarias/mobilidade_urbana/horario-e-itinerario.aspx?acao=d&id_linha=96')
+    let $ = yield bus._getPage('http://www.sjc.sp.gov.br/secretarias/mobilidade_urbana/horario-e-itinerario.aspx?acao=d&id_linha=96')
     var title = $('head > title').text()
 
     let expectedTitle = 'Horários e Itinerários'
@@ -88,8 +88,7 @@ describe('transformCSVArrayToObject', function () {
       'route': 'http://www.sjc.sp.gov.br/secretarias/mobilidade_urbana/horario-e-itinerario.aspx?acao=m&id_linha=2'
     }]
 
-    let transformCSVArrayToObject = busModule.__get__('transformCSVArrayToObject')
-    let result = transformCSVArrayToObject(rawList)
+    let result = bus._transformCSVArrayToObject(rawList)
     assert.deepEqual(result, parsedList)
   })
 
@@ -106,13 +105,12 @@ describe('transformCSVArrayToObject', function () {
       .get('/secretarias/mobilidade_urbana/horario-e-itinerario.aspx?acao=d&id_linha=96')
       .reply(200, rawDetailsPage)
 
-    let parseBuses = busModule.__get__('parseBuses')
-    let result = yield parseBuses(buses)
+    let result = yield bus._parseBuses(buses)
     assert.deepEqual(result, [parsedTimesDetails])
   })
 
   it('parseBusPage - should parse and return a single bus', function* () {
-    let bus = {
+    let singleBus = {
       'busSchedule': 'http://www.sjc.sp.gov.br/secretarias/mobilidade_urbana/horario-e-itinerario.aspx?acao=d&id_linha=96',
       'direction': 'PUTIM / TERMINAL CENTRAL',
       'line': 212,
@@ -124,8 +122,7 @@ describe('transformCSVArrayToObject', function () {
       .get('/secretarias/mobilidade_urbana/horario-e-itinerario.aspx?acao=d&id_linha=96')
       .reply(200, rawDetailsPage)
 
-    let parseBusPage = busModule.__get__('parseBusPage')
-    const parsedBus = yield parseBusPage(bus)
+    const parsedBus = yield bus._parseBusPage(singleBus)
 
     assert.deepEqual(parsedBus, parsedTimesDetails)
   })
@@ -134,8 +131,7 @@ describe('transformCSVArrayToObject', function () {
     let cheerioEntirePage = cheerio.load(rawDetailsPage)
     cheerioTableparser(cheerioEntirePage)
 
-    let parseDetailsPage = busModule.__get__('parseDetailsPage')
-    let result = yield parseDetailsPage(cheerioEntirePage)
+    let result = yield bus._parseDetailsPage(cheerioEntirePage)
 
     assert.deepEqual(result, parsedTimesDetails)
   })
@@ -175,8 +171,7 @@ describe('transformCSVArrayToObject', function () {
       ]
     }
 
-    let chunkScheduleByPeriod = busModule.__get__('chunkScheduleByPeriod')
-    let result = chunkScheduleByPeriod(rawInput)
+    let result = bus._chunkScheduleByPeriod(rawInput)
     assert.deepEqual(result, expectedDawn)
   })
 
@@ -184,8 +179,7 @@ describe('transformCSVArrayToObject', function () {
     let cheerioEntirePage = cheerio.load(rawDetailsPage)
     cheerioTableparser(cheerioEntirePage)
 
-    let getRouteMetadata = busModule.__get__('getRouteMetadata')
-    let result = yield getRouteMetadata(cheerioEntirePage)
+    let result = yield bus._getRouteMetadata(cheerioEntirePage)
 
     assert.deepEqual(result, parsedTimesDetails.routes)
   })
@@ -194,9 +188,18 @@ describe('transformCSVArrayToObject', function () {
     let cheerioEntirePage = cheerio.load(rawDetailsPage)
     cheerioTableparser(cheerioEntirePage)
 
-    let getObservationInfo = busModule.__get__('getObservationInfo')
-    let result = getObservationInfo(cheerioEntirePage)
+    let result = bus._getObservationInfo(cheerioEntirePage)
 
     assert.deepEqual(result, '(1) ATENDE AO VILA ADRIANA (2) CDP')
   })
+
+  // it('createFolder - should create a folder if it not exists', function* () {
+  //   let cheerioEntirePage = cheerio.load(rawDetailsPage)
+  //   cheerioTableparser(cheerioEntirePage)
+
+  //   let createFolder = busModule.__get__('createFolder')
+  //   let result = createFolder(cheerioEntirePage)
+
+  //   assert.deepEqual(result, '(1) ATENDE AO VILA ADRIANA (2) CDP')
+  // })
 })

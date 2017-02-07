@@ -13,6 +13,7 @@
     "email": "pauloluan.inova@gmail.com"
   },
   "dependencies": {
+    "async-class": "^0.4.1",
     "cheerio": "^0.22.0",
     "cheerio-tableparser": "^1.0.1",
     "co": "^4.6.0",
@@ -26,6 +27,7 @@
     "rewire": "^2.5.2"
   },
   "devDependencies": {
+    "async-class": "^0.4.1",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.11.4",
     "babel-eslint": "^6.1.2",
@@ -39,7 +41,7 @@
     "eslint": "^3.1.1",
     "eslint-config-xo-space": "^0.15.0",
     "eslint-plugin-babel": "^3.3.0",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-codecov": "^2.0.2",
     "gulp-coveralls": "^0.1.0",
@@ -52,6 +54,7 @@
     "gulp-plumber": "^1.0.0",
     "gulp-standard": "^8.0.2",
     "isparta": "^4.0.0",
+    "run-sequence": "^1.2.2",
     "standard": "^8.6.0"
   },
   "engines": {
