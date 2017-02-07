@@ -63,7 +63,7 @@ gulp.task('watch', function () {
   gulp.watch(['lib/**/*.js', 'test/**'], ['test'])
 })
 
-gulp.task('codecov', function () {
+gulp.task('codecov', ['test'], function () {
   return gulp.src('./coverage/lcov.info')
     .pipe(codecov())
 })
