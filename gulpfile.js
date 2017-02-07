@@ -63,14 +63,9 @@ gulp.task('watch', function () {
   gulp.watch(['lib/**/*.js', 'test/**'], ['test'])
 })
 
-gulp.task('coveralls', ['test'], function () {
-  if (!process.env.CI) {
-    return
-  }
-
-  // return gulp.src(path.join(__dirname, 'coverage/lcov.info')).pipe(coveralls())
-
-  return gulp.src('./coverage/lcov.info').pipe(codecov())
+gulp.task('codecov', function () {
+  return gulp.src('./coverage/lcov.info')
+    .pipe(codecov())
 })
 
 gulp.task('babel', ['clean'], function () {
@@ -84,4 +79,4 @@ gulp.task('clean', function () {
 })
 
 gulp.task('prepublish', ['nsp', 'babel'])
-gulp.task('default', ['static', 'test', 'coveralls'])
+gulp.task('default', ['static', 'test', 'codecov'])
