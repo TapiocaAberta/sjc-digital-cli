@@ -7,6 +7,8 @@ const assert = require('assert')
 const nock = require('nock')
 const rewire = require('rewire')
 const cheerio = require('cheerio')
+const os = require('os')
+const path = require('path')
 const cheerioTableparser = require('cheerio-tableparser')
 const Bus = rewire('../../lib/bus')
 const bus = new Bus()
@@ -193,13 +195,10 @@ describe('transformCSVArrayToObject', function () {
     assert.deepEqual(result, '(1) ATENDE AO VILA ADRIANA (2) CDP')
   })
 
-  // it('createFolder - should create a folder if it not exists', function* () {
-  //   let cheerioEntirePage = cheerio.load(rawDetailsPage)
-  //   cheerioTableparser(cheerioEntirePage)
+  it('createFolder - should create a folder if it not exists', function* () {
+    const tempPath = os.tmpdir()
+    let result = yield bus._saveFile(parsedTimesDetails, tempPath)
 
-  //   let createFolder = busModule.__get__('createFolder')
-  //   let result = createFolder(cheerioEntirePage)
-
-  //   assert.deepEqual(result, '(1) ATENDE AO VILA ADRIANA (2) CDP')
-  // })
+    assert.equal(result, undefined)
+  })
 })
