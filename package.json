@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "async-class": "^0.4.1",
+    "bluebird": "^3.4.7",
     "cheerio": "^0.22.0",
     "cheerio-tableparser": "^1.0.1",
     "co": "^4.6.0",
