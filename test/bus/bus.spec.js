@@ -201,4 +201,9 @@ describe('transformCSVArrayToObject', function () {
 
     assert.equal(result, undefined)
   })
+
+  // it.only('Execute!', function* () {
+  //   let result = yield bus.execute()
+  //   assert.equal(result, undefined)
+  // })
 })
